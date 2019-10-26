@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="newpackage.AfficherController">
+   <children>
+      <TableView fx:id="table" layoutX="8.0" layoutY="35.0" prefHeight="200.0" prefWidth="378.0">
+        <columns>
+          <TableColumn fx:id="idcoll" prefWidth="75.0" text="id" />
+          <TableColumn fx:id="titrecoll" prefWidth="75.0" text="titre" />
+            <TableColumn fx:id="deurrecoll" prefWidth="75.0" text="duree" />
+            <TableColumn fx:id="descriptioncoll" prefWidth="75.0" text="description" />
+            <TableColumn fx:id="objetcifcool" prefWidth="75.0" text="objetcif" />
+        </columns>
+      </TableView>
+      <TextField fx:id="id" layoutX="402.0" layoutY="35.0" />
+      <TextField fx:id="titre" layoutX="402.0" layoutY="83.0" />
+      <TextField fx:id="duree" layoutX="402.0" layoutY="129.0" />
+      <TextField fx:id="description" layoutX="402.0" layoutY="175.0" />
+      <TextField fx:id="objectif" layoutX="402.0" layoutY="223.0" />
+      <Button fx:id="showbnt" layoutX="86.0" layoutY="295.0" mnemonicParsing="false" text="Afficher" />
+      <Button fx:id="Suppbtn" layoutX="248.0" layoutY="295.0" mnemonicParsing="false" text="Supprimer" />
+      <Button fx:id="modifierbtn" layoutX="416.0" layoutY="295.0" mnemonicParsing="false" text="Modifier" />
+   </children>
+</AnchorPane>
