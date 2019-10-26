@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="594.0" prefWidth="762.0" style="-fx-background-color: #800000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AfficherActualiteController">
+   <children>
+      <TableView fx:id="table" layoutX="6.0" layoutY="100.0" prefHeight="340.0" prefWidth="750.0" style="-fx-background-color: #F5F5DC; -fx-border-color: #000000;">
+        <columns>
+          <TableColumn fx:id="colid" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="coltitre" prefWidth="136.0" text="TITRE" />
+            <TableColumn fx:id="coldescr" prefWidth="219.0" text="DESCRIPTION" />
+            <TableColumn fx:id="coldate" prefWidth="138.0" text="DATE" />
+            <TableColumn fx:id="img" prefWidth="182.0" text="IMAGES" />
+        </columns>
+      </TableView>
+      <Button fx:id="show" layoutX="627.0" layoutY="543.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="114.0" style="-fx-background-color: #000000;" text="AFFICHER " textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Button>
+      <Button fx:id="delete" layoutX="627.0" layoutY="500.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="114.0" style="-fx-background-color: #000000;" text="SUPPRIMER" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Button>
+      <Button fx:id="update" layoutX="627.0" layoutY="463.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="114.0" style="-fx-background-color: #000000;" text="MODIFIER" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="11.0" />
+         </font></Button>
+      <Label graphicTextGap="0.0" layoutX="220.0" layoutY="25.0" prefHeight="37.0" prefWidth="407.0" text="CONSULTER LES ACTUALITES" textAlignment="CENTER" textFill="SEASHELL" underline="true">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+         <effect>
+            <DropShadow color="#ab6161" />
+         </effect>
+      </Label>
+      <AnchorPane layoutX="2.0" layoutY="440.0" prefHeight="162.0" prefWidth="581.0" style="-fx-background-color: #800000;">
+         <children>
+            <TextField fx:id="idm" layoutX="11.0" layoutY="42.0" prefHeight="25.0" prefWidth="155.0" promptText="ID.." style="-fx-background-color: #000000;">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="titrem" layoutX="11.0" layoutY="74.0" prefHeight="27.0" prefWidth="155.0" promptText="TITRE.." style="-fx-background-color: #000000;">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </TextField>
+            <DatePicker fx:id="datem" layoutX="193.0" layoutY="42.0" prefHeight="25.0" prefWidth="149.0" promptText="DATE JJ/MM/AA" style="-fx-background-color: #000000;" />
+            <TextField fx:id="imm" layoutX="190.0" layoutY="75.0" prefHeight="77.0" prefWidth="155.0" promptText="IMAGES" style="-fx-background-color: #000000;">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </TextField>
+            <TextArea fx:id="desm" layoutX="380.0" layoutY="34.0" prefHeight="118.0" prefWidth="166.0" promptText="DESCRIPTION.." style="-fx-background-color: #000000; -fx-background-insets: #000000;" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
