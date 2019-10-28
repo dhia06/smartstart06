@@ -36,7 +36,7 @@ public class NewFXMain extends Application {
         
         StackPane root = new StackPane();
         root.getChildren().add(btn);*/
-        Parent root=FXMLLoader.load(getClass().getResource("../GUI/eventt.fxml"));
+        Parent root=FXMLLoader.load(getClass().getResource("../GUI/AjoutEventt.fxml"));
         
         Scene scene = new Scene(root);
         

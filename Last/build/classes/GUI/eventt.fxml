@@ -16,7 +16,7 @@
          <children>
             <ImageView fitHeight="493.0" fitWidth="769.0" layoutX="-1.0" layoutY="73.0" opacity="0.39" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../wamp6/www/image/q0FnMwInbO.png" />
+                  <Image url="@../Image/q0FnMwInbO.png" />
                </image>
             </ImageView>
             <AnchorPane layoutY="-1.0" prefHeight="74.0" prefWidth="769.0" style="-fx-background-color: #6b89cc;">
@@ -28,12 +28,12 @@
                   </Button>
                   <ImageView fitHeight="55.0" fitWidth="37.0" layoutX="243.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../../wamp6/www/image/IMage/50199804-icono-inicio-blanco-blanco-en-el-negro.png" />
+                        <Image url="@../Image/50199804-icono-inicio-blanco-blanco-en-el-negro.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="53.0" fitWidth="60.0" layoutX="672.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../../wamp6/www/image/white-shopping-cart-md.png" />
+                        <Image url="@../Image/white-shopping-cart-md.png" />
                      </image>
                   </ImageView>
                   <Label layoutX="6.0" layoutY="6.0" text="Smart Start" textFill="#e1e0e0">
@@ -66,6 +66,7 @@
             <Label layoutX="613.0" layoutY="73.0" prefHeight="26.0" prefWidth="141.0" text="Information Evenement" />
             <Button fx:id="supprimer" layoutX="85.0" layoutY="392.0" mnemonicParsing="false" onAction="#supprimer_evenement" text="Supprimer" textFill="#4f0dc9" />
             <Button fx:id="reservation" layoutX="211.0" layoutY="438.0" mnemonicParsing="false" onAction="#save_reservation" text="reservation" textFill="#4f25b2" />
+            <Button fx:id="b1" layoutX="452.0" layoutY="392.0" mnemonicParsing="false" onAction="#Ajout_Event" text="Ajouter" textFill="#4c289a" />
          </children>
       </AnchorPane>
    </children>

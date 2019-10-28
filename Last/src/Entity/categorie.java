@@ -11,20 +11,20 @@ import java.sql.Date;
  *
  * @author asus
  */
-public class categorie {
+public class Categorie {
 public int id;  
 public String libelle;
 public String description;
 
-public categorie() {
+public Categorie() {
     }
 
-    public categorie(int id, String libelle, String description) {
+    public Categorie(int id, String libelle, String description) {
         this.id = id;
         this.libelle = libelle;
         this.description = description;
     }
-  public categorie(String libelle, String description) {
+  public Categorie(String libelle, String description) {
         this.libelle = libelle;
         this.description = description;
     }

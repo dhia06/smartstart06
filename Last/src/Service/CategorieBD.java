@@ -5,7 +5,8 @@
  */
 package Service;
 
-import Entity.categorie;
+import Entity.Categorie;
+
 import Utils.MyBDConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -25,7 +26,7 @@ public class CategorieBD {
     Connection mycon = MyBDConnection.getInstanceBD().getConnection(); 
      
      
-     public void ajouterEvent(categorie C){
+     public void ajouterEvent(Categorie C){
     
         
         try {
@@ -40,7 +41,7 @@ public class CategorieBD {
         }
     }
      
-      public ObservableList<categorie> afficherCategorie(){
+      public ObservableList<Categorie> afficherCategorie(){
         ObservableList myList = FXCollections.observableArrayList();
         
         try {
@@ -53,7 +54,7 @@ public class CategorieBD {
                     +" | "+rs.getString(3)
                     );
                     
-              myList.add(new categorie(rs.getInt(1),rs.getString(2),rs.getString(3)
+              myList.add(new Categorie(rs.getInt(1),rs.getString(2),rs.getString(3)
                     ));
             }    
         } catch (SQLException ex) {
@@ -62,7 +63,7 @@ public class CategorieBD {
         }      
         return myList;
     }
-      public  ObservableList<categorie> Search(String tf){
+      public  ObservableList<Categorie> Search(String tf){
         ObservableList myListBenef = FXCollections.observableArrayList();
         
         try {
@@ -73,7 +74,7 @@ public class CategorieBD {
                         
             ResultSet rs = st.executeQuery(str);
             while(rs.next()){
-            myListBenef.add(new categorie(rs.getInt(1),rs.getString(2),rs.getString(3)
+            myListBenef.add(new Categorie(rs.getInt(1),rs.getString(2),rs.getString(3)
                    ));
             }    
         } catch (SQLException ex) {
@@ -82,9 +83,9 @@ public class CategorieBD {
         }      
         return myListBenef;
     }
-       public List<categorie> afficherComb() throws SQLException
+       public List<Categorie> afficherComb() throws SQLException
 {
-   List<categorie> cat = new ArrayList<>();
+   List<Categorie> cat = new ArrayList<>();
      //String pattern = "yyyy-MM-dd";
     //SimpleDateFormat format = new SimpleDateFormat(pattern);
     String req = "select * from categorie ";
@@ -93,8 +94,8 @@ public class CategorieBD {
          preparedStatement = mycon.prepareStatement(req);
          ResultSet result = preparedStatement.executeQuery();
                      while (result.next()) {
-                 categorie lib;
-                lib=new categorie();
+                 Categorie lib;
+                lib=new Categorie();
                 lib.setLibelle(result.getString("libelle"));
                lib.setId(result.getInt("id"));
                 cat.add(lib);
