@@ -12,9 +12,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AdminEventtController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.CategorieEventtController">
    <children>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="410.0" prefWidth="710.0">
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="408.0" prefWidth="724.0">
          <children>
             <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <effect>
@@ -65,33 +65,47 @@
                                     <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white; -fx-font-size: 1em;" text="ADMIN" />
                                  </children>
                               </HBox>
-                              <Button fx:id="categorie" mnemonicParsing="false" onAction="#categorieEventbtn" opacity="0.56" prefHeight="42.0" prefWidth="156.0" text="Categorie" textFill="#16107a" />
-                              <Button fx:id="statisque" mnemonicParsing="false" onAction="#statbtn" opacity="0.56" prefHeight="42.0" prefWidth="155.0" text="Statistique" textFill="#16107a" />
-                              <Button mnemonicParsing="false" opacity="0.56" prefHeight="42.0" prefWidth="152.0" text="BOUTON3" textFill="#16107a" />
                            </children>
                         </VBox>
-                        <AnchorPane prefHeight="316.0" prefWidth="548.0">
+                        <AnchorPane prefHeight="244.0" prefWidth="450.0">
                            <children>
-                              <ImageView fitHeight="410.0" fitWidth="580.0" opacity="0.67" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../Image/q0FnMwInbO.png" />
-                                 </image>
-                              </ImageView>
-                              <TableView fx:id="tabevent" layoutY="85.0" prefHeight="179.0" prefWidth="580.0">
-                                <columns>
-                                  <TableColumn fx:id="idcolE" prefWidth="75.0" text="id" />
-                                  <TableColumn fx:id="titrecolE" prefWidth="75.0" text="titre" />
-                                    <TableColumn fx:id="lieucolE" prefWidth="75.0" text="lieu" />
-                                    <TableColumn fx:id="descriptioncollE" prefWidth="75.0" text="description" />
-                                    <TableColumn fx:id="date_evnetcollE" prefWidth="75.0" text="date_event" />
-                                    <TableColumn fx:id="nbplacecollE" prefWidth="75.0" text="nbplace" />
-                                    <TableColumn fx:id="nom_imagecollE" prefWidth="75.0" text="nom_image" />
-                                    <TableColumn fx:id="categoriecollE" prefWidth="75.0" text="categorie" />
-                                </columns>
-                              </TableView>
-                              <Button fx:id="ajouteer" layoutX="72.0" layoutY="282.0" mnemonicParsing="false" onAction="#ajoutbtnEvent" text="Ajouter" />
-                              <Button fx:id="modifev" layoutX="207.0" layoutY="282.0" mnemonicParsing="false" onAction="#modifbtnEvent" text="Modifier" />
-                              <Button fx:id="supprimerevnt" layoutX="302.0" layoutY="282.0" mnemonicParsing="false" onAction="#supprimer_evenement" text="supprimer" />
+                              <AnchorPane prefHeight="302.0" prefWidth="539.0">
+                                 <children>
+                                    <ImageView fitHeight="324.0" fitWidth="589.0" opacity="0.56" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/q0FnMwInbO.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Button fx:id="ajoutecE" layoutX="439.0" layoutY="154.0" mnemonicParsing="false" onAction="#ajoutercatE" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #143e64;" text="Ajouter" textFill="#1b0404" />
+                                    <Button fx:id="retourE" layoutX="439.0" layoutY="63.0" mnemonicParsing="false" onAction="#btnretourE" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #143e64;" text="Retour" textFill="#080628" />
+                                    <TableView fx:id="tabcatE" layoutX="21.0" layoutY="49.0" onMouseClicked="#click_afficheCE" prefHeight="173.0" prefWidth="373.0">
+                                      <columns>
+                                        <TableColumn fx:id="idcategorieE" prefWidth="120.0" text="id " />
+                                        <TableColumn fx:id="libellecategoirE" prefWidth="143.0" text="libelle" />
+                                          <TableColumn fx:id="descriptioncolE" minWidth="0.0" prefWidth="109.0" text="description" />
+                                      </columns>
+                                    </TableView>
+                                    <ImageView fitHeight="25.0" fitWidth="44.0" layoutX="448.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/50722.png" />
+                                       </image>
+                                    </ImageView>
+                                    <TextField fx:id="idcatE" layoutX="36.0" layoutY="252.0" promptText="id.." />
+                                    <TextField fx:id="libellecatE" layoutX="36.0" layoutY="293.0" promptText="libelle" />
+                                    <TextField fx:id="descriptioncE" layoutX="232.0" layoutY="242.0" prefHeight="75.0" prefWidth="149.0" promptText="description ...." />
+                                    <Button fx:id="supprimercE" layoutX="439.0" layoutY="255.0" mnemonicParsing="false" onAction="#suppcategorieE" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #143e64;" text="Supprimer" textFill="#030101" />
+                                    <ImageView fitHeight="34.0" fitWidth="39.0" layoutX="444.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/add.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="34.0" fitWidth="33.0" layoutX="444.0" layoutY="264.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/basket.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
                            </children>
                         </AnchorPane>
                      </children>

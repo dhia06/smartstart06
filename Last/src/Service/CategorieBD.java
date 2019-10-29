@@ -107,4 +107,19 @@ public class CategorieBD {
             }
           return cat;
 }
+        public void delete_Categorie(Categorie c) {
+
+     
+String requete = "delete from categorie where id = ?";
+        try {
+            PreparedStatement ps = mycon.prepareStatement(requete);
+            ps.setInt(1, c.getId());
+            ps.executeUpdate();
+            System.out.println("Categorie supprimé");
+        } catch (SQLException ex) {
+            //Logger.getLogger(PersonneDao.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("erreur lors de la suppression " + ex.getMessage());
+        }    
+     
+}  
 }
