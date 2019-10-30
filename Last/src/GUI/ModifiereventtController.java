@@ -204,11 +204,11 @@ public class ModifiereventtController implements Initializable {
             alert.setContentText("Erreur");
             alert.showAndWait();
         } 
-       else if(((Integer.parseInt(nbplace.getText()))>1000)||((Integer.parseInt(nbplace.getText()))<1))
+       else if(((Integer.parseInt(nbplace.getText()))>500)||((Integer.parseInt(nbplace.getText()))<1))
           {
           Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error Dialog");
-            alert.setHeaderText("veuillez saisir un nbre de place entre 1 et 1000");
+            alert.setHeaderText("veuillez saisir un nbre de place entre 1 et 500");
             alert.setContentText("Erreur");
             alert.showAndWait();
         } 

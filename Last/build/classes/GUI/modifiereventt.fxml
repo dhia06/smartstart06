@@ -72,21 +72,45 @@
                         </VBox>
                         <AnchorPane prefHeight="316.0" prefWidth="548.0">
                            <children>
-                              <TextField fx:id="id" layoutX="49.0" layoutY="31.0" promptText="id" />
-                              <TextField fx:id="titre" layoutX="49.0" layoutY="87.0" promptText="titre" />
-                              <TextField fx:id="lieu" layoutX="49.0" layoutY="146.0" promptText="lieu" />
-                              <TextField fx:id="description" layoutX="49.0" layoutY="202.0" promptText="description" />
-                              <TextField fx:id="nbplace" layoutX="250.0" layoutY="146.0" promptText="nbplace" />
-                              <DatePicker fx:id="date_event" layoutX="238.0" layoutY="202.0" promptText="date_event" />
-                              <ComboBox fx:id="idCat" layoutX="250.0" layoutY="87.0" prefWidth="150.0" />
-                              <Button fx:id="uploadImage" layoutX="299.0" layoutY="31.0" mnemonicParsing="false" onAction="#uploadImage" text="Image" />
-                              <Button fx:id="modifier" layoutX="124.0" layoutY="261.0" mnemonicParsing="false" onAction="#modif" text="Modifier" />
-                              <ImageView fx:id="UploadImage" fitHeight="150.0" fitWidth="122.0" layoutX="421.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../Image/drag-and-drop-icon.png" />
-                                 </image>
-                              </ImageView>
-                              <Button fx:id="annuler" layoutX="273.0" layoutY="261.0" mnemonicParsing="false" onAction="#anuulerbtn" text="annuler" />
+                              <AnchorPane prefHeight="316.0" prefWidth="548.0">
+                                 <children>
+                                    <ImageView fitHeight="329.0" fitWidth="568.0" opacity="0.26" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/q0FnMwInbO.png" />
+                                       </image>
+                                    </ImageView>
+                                    <TextField fx:id="id" layoutX="14.0" layoutY="51.0" promptText="id" />
+                                    <TextField fx:id="titre" layoutX="14.0" layoutY="103.0" promptText="titre" />
+                                    <TextField fx:id="lieu" layoutX="14.0" layoutY="162.0" promptText="lieu" />
+                                    <TextField fx:id="description" layoutX="14.0" layoutY="216.0" promptText="description" />
+                                    <DatePicker fx:id="date_event" layoutX="224.0" layoutY="216.0" promptText="date_event" />
+                                    <TextField fx:id="nbplace" layoutX="224.0" layoutY="162.0" promptText="nbplace" />
+                                    <ComboBox fx:id="idCat" layoutX="227.0" layoutY="103.0" prefWidth="150.0" />
+                                    <Button fx:id="uploadImage" layoutX="245.0" layoutY="32.0" mnemonicParsing="false" onAction="#uploadImage" prefHeight="50.0" prefWidth="104.0" style="-fx-background-color: #143e64;" text="Image" textFill="#1e0101" />
+                                    <Button fx:id="annuler" layoutX="349.0" layoutY="262.0" mnemonicParsing="false" onAction="#anuulerbtn" prefHeight="42.0" prefWidth="104.0" style="-fx-background-color: #143e64;" text="Retour" textFill="#280303" />
+                                    <Button fx:id="modifier" layoutX="120.0" layoutY="262.0" mnemonicParsing="false" onAction="#modif" prefHeight="42.0" prefWidth="104.0" style="-fx-background-color: #143e64;" text="Modifier" textFill="#110101" />
+                                    <ImageView fx:id="UploadImage" fitHeight="150.0" fitWidth="122.0" layoutX="412.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/drag-and-drop-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="25.0" fitWidth="33.0" layoutX="120.0" layoutY="271.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/edit.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="42.0" fitWidth="33.0" layoutX="349.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/50722.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="42.0" fitWidth="25.0" layoutX="252.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/drag-and-drop-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
                            </children>
                         </AnchorPane>
                      </children>

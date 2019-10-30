@@ -7,6 +7,7 @@ package Service;
 
 
 import Entity.Evenement;
+import Entity.Participation;
 import Utils.MyBDConnection;
 import java.io.IOException;
 import java.sql.Connection;
@@ -237,8 +238,175 @@ ObservableList<Evenement> list=FXCollections.observableArrayList();
         }
 
 } 
- 
+    public int Notif() {
+        try {
+            String sql2 = "SELECT count(*) FROM `evenement` WHERE date_event = CURRENT_DATE  ";
+            Statement st2 = mycon.createStatement();
+            ResultSet rs2 = st2.executeQuery(sql2);
+            
+            while(rs2.next())
+            {
+                //return 0;
+                return rs2.getInt(1);            
+                //System.out.println(rs2.getInt(1)); 
+            }
+        } catch (SQLException ex) {
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        }
 
+        return -1;
 
+    }
+    public List<Evenement> afficherEvenementsAjourdhui() {
+        List<Evenement> list = new ArrayList<>();
+        try {
+            String sql2 = "SELECT * FROM `evenement` WHERE date_event = CURRENT_DATE  ; ";
+            Statement st2 = mycon.createStatement();
+            ResultSet rs = st2.executeQuery(sql2);
+            while (rs.next()) {
+
+                                Evenement e;
+                       e = new Evenement(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getDate(5),
+                    rs.getInt(6),rs.getString(7),rs.getInt(8));
+                        
+                                list.add(e);
+            }
+        } catch (SQLException ex) {
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        }
+
+        return list;
+        
+        
+    }
+     public List<Evenement> EventsPopulaire() {
+ String req="select * from evenement order by nbplace desc"; 
+List<Evenement> list=new ArrayList<>();         
+        try { Statement ste = mycon.createStatement();
+            ResultSet rs=ste.executeQuery(req);
+            while(rs.next()){
+                  Evenement e;
+                       e = new Evenement(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getDate(5),
+                    rs.getInt(6),rs.getString(7),rs.getInt(8));
+                        
+                                list.add(e);
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(EvenementBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;    
+    }
+     
+    /* public Evenement NextEvent() {
+ String req="select * from evenement where date_event>CURRENT_TIME order by date_event asc limit 1"; 
+ Evenement p = null;
+               // Evenement p=new Evenement();
+        try {
+            Statement ste = mycon.createStatement();
+            ResultSet rs=ste.executeQuery(req);
+            while(rs.next()){
+                //Evenement p;
+                      p = new Evenement(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getDate(5),
+                    rs.getInt(6),rs.getString(7),rs.getInt(8));
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(EvenementBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return p;    
+    }
+     public void ajoutParticipation(Participation p){
+         String req="insert into participation (paticipant_id,event_id) values ('"+p.getPaticipant_id()+"','"+p.getEvent_id()+"')";
+         String req1="update evenement set nbplace=nbplace+1 where id='"+p.getEvent_id()+"'";
+  try {
+      Statement ste = mycon.createStatement();
+            ste.executeUpdate(req);
+            ste.executeUpdate(req1);
+        } catch (SQLException ex) {
+            Logger.getLogger(EvenementBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+     }
+      public List<Participation> ListParticipEvents(int evenement_id){
+     String req="select * from participation where event_id='"+evenement_id+"'"; 
+          List<Participation> part = new ArrayList<>();
+        try {
+             Statement ste = mycon.createStatement();
+            ResultSet rs=ste.executeQuery(req);
+            while(rs.next()){
+                 Participation p = new Participation(0,0,0);    
+                p.setId(rs.getInt(1));
+                 p.setPaticipant_id(rs.getInt(2));
+                p.setEvent_id(rs.getInt(3));
+                part.add(p);
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(EvenementBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return part;   
+     }
+      public void deleteParticipation(Participation p){
+     try {
    
+   String req2= "delete from participation where event_id = '"+p.getEvent_id()+"' and  paticipant_id = '"+p.getPaticipant_id()+"'";
+          String req1="update evenement set nbplace=nbplace-1 where id='"+p.getEvent_id()+"'";
+          Statement ste = mycon.createStatement();
+            ste.executeUpdate(req2);
+            ste.executeUpdate(req1);
+           
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+     }*/
+      public List<Evenement> afficherEvenementsNext() {
+        List<Evenement> list = new ArrayList<>();
+        try {
+            String sql2 = "select * from evenement where date_event>CURRENT_TIME order by date_event asc limit 1 ";
+            Statement st2 = mycon.createStatement();
+            ResultSet rs = st2.executeQuery(sql2);
+            while (rs.next()) {
+
+                                Evenement e;
+                       e = new Evenement(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getDate(5),
+                    rs.getInt(6),rs.getString(7),rs.getInt(8));
+                        
+                                list.add(e);
+            }
+        } catch (SQLException ex) {
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        }
+
+        return list;
+        
+        
+    }
+       public int Notif1() {
+        try {
+            String sql2 = "SELECT count(*) FROM `evenement` WHERE date_event > CURRENT_DATE  ";
+            Statement st2 = mycon.createStatement();
+            ResultSet rs2 = st2.executeQuery(sql2);
+            
+            while(rs2.next())
+            {
+                //return 0;
+                return rs2.getInt(1);            
+                //System.out.println(rs2.getInt(1)); 
+            }
+        } catch (SQLException ex) {
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        }
+
+        return -1;
+
+    }
+     
 }     
