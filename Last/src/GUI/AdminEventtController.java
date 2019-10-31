@@ -364,8 +364,9 @@ Task<ArrayList<Evenement>> task = new Task() {
 
     @FXML
     private void esporter_table(ActionEvent event) throws FileNotFoundException, IOException {
-        Workbook workbook = new HSSFWorkbook();
-            Sheet spreadsheet = workbook.createSheet("sample");
+        
+       Workbook workbook = new HSSFWorkbook();
+            Sheet spreadsheet = workbook.createSheet("excel");
             org.apache.poi.ss.usermodel.Row row = spreadsheet.createRow(0);
             for (int j = 0; j < tabevent.getColumns().size(); j++) {
                 row.createCell(j).setCellValue(tabevent.getColumns().get(j).getText());

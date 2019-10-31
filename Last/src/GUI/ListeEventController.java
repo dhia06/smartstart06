@@ -60,7 +60,7 @@ public class ListeEventController implements Initializable {
        
 
        String A = ev.getNom_image();
-                A = "C:\\Users\\Chaima\\Desktop\\pialecso3a23-master\\src\\" + A;
+                A = "C:/Users/asus/Documents/NetBeansProjects/Last/src/" + A;
                 File F1 = new File(A);
             Image image1 = new Image(F1.toURI().toString());
           // UploadImage.setImage(image1);

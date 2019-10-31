@@ -22,6 +22,12 @@ public class Evenement {
     public String nom_image;
     public int id_categorie;
 
+    public Evenement(int id, String titre) {
+        this.id = id;
+        this.titre = titre;
+    }
+    
+
     public Evenement(int id, String titre, String lieu, String description, Date date_event, int nbplace, String nom_image, int id_categorie) {
         this.id = id;
         this.titre = titre;
@@ -44,7 +50,6 @@ public class Evenement {
     }
 
     public Evenement() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public int getId() {

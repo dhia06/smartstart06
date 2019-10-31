@@ -23,6 +23,12 @@ public class User {
     private String adresse;
     private String image;
 
+    public User(int id, String nom) {
+        this.id = id;
+        this.nom = nom;
+    }
+    
+
     public User() {
     }
 

@@ -97,6 +97,8 @@ public class EventtController implements Initializable {
     public ArrayList<Evenement> ran;
     @FXML
     private Button liste;
+    @FXML
+    private Button participer;
 
     /**
      * Initializes the controller class.
@@ -121,8 +123,8 @@ public class EventtController implements Initializable {
     }    
 
     @FXML
-    private void supprimer_evenement(ActionEvent event) {
-        EvenementBD cs=new EvenementBD();
+    private void supprimer_evenement(ActionEvent event) throws IOException {
+       /* EvenementBD cs=new EvenementBD();
        // EvenementDB  cs = new EvenementDB ();
           Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
 alert.setTitle("Confirmation Dialog");
@@ -138,7 +140,12 @@ if (result.get() == ButtonType.OK){
   cs.delete_Event(Event_tab.getSelectionModel().getSelectedItem());
     
         
-      Event_tab.setItems(cs.afficherEvent()); //Affichage après suppression
+      Event_tab.setItems(cs.afficherEvent()); //Affichage après suppression*/
+       Parent root = FXMLLoader.load(getClass().getResource("AdminEventt.fxml"));
+        Scene newScene = new Scene(root);
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(newScene);
+        window.show();
    
     
     }
@@ -349,6 +356,15 @@ EvenementBD es = new EvenementBD();
     private void liste(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("ListeEvent.fxml"));
                 
+        Scene newScene = new Scene(root);
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(newScene);
+        window.show();
+    }
+
+    @FXML
+    private void participer(ActionEvent event) throws IOException {
+         Parent root = FXMLLoader.load(getClass().getResource("Participation.fxml"));
         Scene newScene = new Scene(root);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(newScene);

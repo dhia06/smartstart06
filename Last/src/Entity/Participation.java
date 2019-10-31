@@ -15,6 +15,10 @@ public class Participation {
     private int paticipant_id;
     private int event_id;
 
+    public Participation() {
+    }
+    
+
     public Participation(int id, int paticipant_id, int event_id) {
         this.id = id;
         this.paticipant_id = paticipant_id;

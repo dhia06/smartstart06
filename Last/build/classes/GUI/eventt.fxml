@@ -88,6 +88,7 @@
                      </children>
                   </HBox>
                   <Button fx:id="liste" mnemonicParsing="false" onAction="#liste" prefHeight="52.0" prefWidth="130.0" text="ListeEvent " />
+                  <Button fx:id="participer" mnemonicParsing="false" onAction="#participer" prefHeight="54.0" prefWidth="149.0" text="Participer" />
                </children>
             </VBox>
          </children>
