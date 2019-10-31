@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="459.0" prefWidth="742.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <SplitPane dividerPositions="0.221505376344086" layoutX="-2.0" layoutY="-4.0" orientation="VERTICAL" prefHeight="467.0" prefWidth="748.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="753.0" style="-fx-background-color: #008080;">
+               <children>
+                  <Label layoutX="14.0" layoutY="55.0" prefHeight="29.0" prefWidth="144.0" text="    SMART  START" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="62.0" fitWidth="83.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/1e0c2049-b1bd-42b5-a023-fb4c9c27917c_200x200.png" />
+                     </image>
+                  </ImageView>
+                  <TextField layoutX="183.0" layoutY="34.0" prefHeight="29.0" prefWidth="144.0" promptText="Rechercher ici.." />
+                  <ImageView fitHeight="29.0" fitWidth="36.0" layoutX="327.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/Fotolia_28121275_Subscription_XL1.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <SplitPane dividerPositions="0.18230563002680966" prefHeight="359.0" prefWidth="748.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="357.0" prefWidth="126.0" style="-fx-background-color: #008080;">
+                           <children>
+                              <VBox prefHeight="73.0" prefWidth="133.0" style="-fx-background-color: #008080; -fx-border-color: white;">
+                                 <children>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="               ADMIN" textAlignment="CENTER" wrappingWidth="79.9609375">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                              <Button layoutY="68.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="133.0" style="-fx-background-color: #708090; -fx-border-color: white;" text="ACTUALITE" />
+                              <Button layoutY="130.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="133.0" style="-fx-background-color: #708090; -fx-border-color: white;" text="PUBLICITE" />
+                              <Button layoutY="192.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="133.0" style="-fx-background-color: #708090; -fx-border-color: white;" text="SPONSORING" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="357.0" prefWidth="576.0" />
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

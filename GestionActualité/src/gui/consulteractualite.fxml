@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="635.0" prefWidth="801.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ConsulteractualiteController">
+   <children>
+      <SplitPane dividerPositions="0.221505376344086" layoutX="-1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="635.0" prefWidth="803.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="119.0" prefWidth="810.0" style="-fx-background-color: #008080;">
+               <children>
+                  <Label layoutX="14.0" layoutY="55.0" prefHeight="29.0" prefWidth="144.0" text="    SMART  START" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="62.0" fitWidth="83.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/1e0c2049-b1bd-42b5-a023-fb4c9c27917c_200x200.png" />
+                     </image>
+                  </ImageView>
+                  <TextField layoutX="183.0" layoutY="34.0" prefHeight="29.0" prefWidth="144.0" promptText="Rechercher ici.." />
+                  <ImageView fitHeight="29.0" fitWidth="36.0" layoutX="327.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/Fotolia_28121275_Subscription_XL1.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="460.0" prefWidth="789.0">
+               <children>
+                  <SplitPane dividerPositions="0.16748768472906403" prefHeight="491.0" prefWidth="814.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="425.0" prefWidth="121.0" style="-fx-background-color: #008080;">
+                           <children>
+                              <VBox layoutX="-2.0" prefHeight="73.0" prefWidth="133.0" style="-fx-background-color: #008080; -fx-border-color: white;">
+                                 <children>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="               ADMIN" textAlignment="CENTER" wrappingWidth="79.9609375">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                              <Button layoutY="132.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="133.0" style="-fx-background-color: #708090; -fx-border-color: white;" text="ACTUALITE">
+                                 <effect>
+                                    <Bloom />
+                                 </effect></Button>
+                              <Button fx:id="publicite" layoutY="194.0" mnemonicParsing="false" onAction="#publicite" prefHeight="62.0" prefWidth="133.0" style="-fx-background-color: #708090; -fx-border-color: white;" text="PUBLICITE" />
+                              <Button fx:id="sponsoring" layoutX="-2.0" layoutY="256.0" mnemonicParsing="false" onAction="#sponsoring" prefHeight="62.0" prefWidth="133.0" style="-fx-background-color: #708090; -fx-border-color: white;" text="SPONSORING" />
+                              <Button layoutX="-9.0" layoutY="70.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="144.0" style="-fx-background-color: #708090;" text="ACCUEUIL" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="461.0" prefWidth="673.0">
+                           <children>
+                              <TableView fx:id="table" layoutX="1.0" layoutY="1.0" prefHeight="211.0" prefWidth="664.0">
+                                <columns>
+                                  <TableColumn fx:id="colid" prefWidth="62.0" text="ID" />
+                                  <TableColumn fx:id="coltitre" prefWidth="88.0" text="TITRE" />
+                                    <TableColumn fx:id="coldescr" prefWidth="184.0" text="DESCRIPTION" />
+                                    <TableColumn fx:id="coldate" prefWidth="131.0" text="DATE" />
+                                    <TableColumn fx:id="colimg" prefWidth="183.0" text="IMAGE " />
+                                </columns>
+                                 <effect>
+                                    <DropShadow height="101.06" radius="44.84" width="80.3" />
+                                 </effect>
+                              </TableView>
+                              <TextField fx:id="tfid" layoutX="20.0" layoutY="241.0" promptText="ID..">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="tftitre" layoutX="20.0" layoutY="273.0" prefHeight="25.0" prefWidth="159.0" promptText="Titre..">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </TextField>
+                              <TextArea fx:id="tfdes" layoutX="211.0" layoutY="266.0" prefHeight="112.0" prefWidth="175.0" promptText="Description.." />
+                              <DatePicker fx:id="date_ac" layoutX="20.0" layoutY="313.0" prefHeight="25.0" prefWidth="159.0" />
+                              <ImageView fx:id="UploadImage" fitHeight="129.0" fitWidth="184.0" layoutX="449.0" layoutY="249.0" pickOnBounds="true" preserveRatio="true" />
+                              <TextField fx:id="tfimg" layoutX="211.0" layoutY="228.0" prefHeight="25.0" prefWidth="175.0" promptText="Image.." />
+                              <Button fx:id="uploadImage" layoutX="401.0" layoutY="228.0" mnemonicParsing="false" onAction="#uploadImage" prefHeight="25.0" prefWidth="33.0" text="..." />
+                              <Button fx:id="ajout_btn" layoutX="43.0" layoutY="390.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="113.0" style="-fx-background-color: #008080; -fx-border-color: black;" text="AJOUTER" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold Italic" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="delete" layoutX="345.0" layoutY="390.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="113.0" style="-fx-background-color: #008080; -fx-border-color: black;" text="SUPPRIMER" textFill="WHITE" />
+                              <Button fx:id="update" layoutX="186.0" layoutY="390.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="113.0" style="-fx-background-color: #008080; -fx-border-color: black;" text="MODIFIER" textFill="WHITE" />
+                              <Label fx:id="lbldate" layoutX="20.0" layoutY="348.0" onDragDetected="#selectDate" prefHeight="8.0" prefWidth="144.0" />
+                           </children></AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
