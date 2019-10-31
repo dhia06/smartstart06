@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ListeEventController">
+   <children>
+      <AnchorPane layoutX="-2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="694.0">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <children>
+                  <HBox maxHeight="-Infinity" prefHeight="75.0" prefWidth="700.0" style="-fx-background-color: #353942;">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="80.0" prefWidth="168.0">
+                           <children>
+                              <ImageView fitHeight="50.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Image/74325490_2895931740431458_4796052420230643712_n.png" />
+                                 </image>
+                              </ImageView>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white; -fx-font-size: 1em;" text="Smart Start" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: 54;">
+                           <children>
+                              <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: #3e3e3e;">
+                                 <children>
+                                    <TextField promptText="SEARCH HERE" />
+                                    <ImageView fitHeight="150.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/56531200_2283714838552875_5001936264589475840_n.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" />
+                        <HBox prefHeight="100.0" prefWidth="200.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <VBox maxWidth="-Infinity" prefWidth="150.0" style="-fx-background-color: #353942;">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="50.0" prefWidth="130.0" style="-fx-background-color: #353942; -fx-border-color: white;">
+                                 <children>
+                                    <ImageView fitHeight="50.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/48412061_235489847348985_3949505046110011392_n.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white; -fx-font-size: 1em;" text="User" />
+                                 </children>
+                              </HBox>
+                              <Button mnemonicParsing="false" opacity="0.56" prefHeight="42.0" prefWidth="156.0" textFill="#16107a" />
+                           </children>
+                        </VBox>
+                        <AnchorPane prefHeight="325.0" prefWidth="548.0">
+                           <children>
+                              <ImageView fitHeight="467.0" fitWidth="579.0" opacity="0.45" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Image/q0FnMwInbO.png" />
+                                 </image>
+                              </ImageView>
+                              <ScrollPane prefHeight="326.0" prefWidth="579.0">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="328.0" prefWidth="582.0">
+                                       <children>
+                                          <GridPane fx:id="gridEvents" layoutY="6.0" prefHeight="272.0" prefWidth="560.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                          </GridPane>
+                                          <Button fx:id="retourliste" layoutX="220.0" layoutY="289.0" mnemonicParsing="false" onAction="#retouliste" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: #353942;" text="Retour" textFill="#e8e0e0" />
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

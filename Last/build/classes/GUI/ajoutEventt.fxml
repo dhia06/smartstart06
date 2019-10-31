@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjoutEventtController">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="694.0">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <children>
+                  <HBox maxHeight="-Infinity" prefHeight="75.0" prefWidth="700.0" style="-fx-background-color: #353942;">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="80.0" prefWidth="168.0">
+                           <children>
+                              <ImageView fitHeight="50.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Image/74325490_2895931740431458_4796052420230643712_n.png" />
+                                 </image>
+                              </ImageView>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white; -fx-font-size: 1em;" text="Smart Start" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: 54;">
+                           <children>
+                              <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: #3e3e3e;">
+                                 <children>
+                                    <TextField promptText="SEARCH HERE" />
+                                    <ImageView fitHeight="150.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/56531200_2283714838552875_5001936264589475840_n.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" />
+                        <HBox prefHeight="100.0" prefWidth="200.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <VBox maxWidth="-Infinity" prefWidth="150.0" style="-fx-background-color: #353942;">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="50.0" prefWidth="130.0" style="-fx-background-color: #353942; -fx-border-color: white;">
+                                 <children>
+                                    <ImageView fitHeight="50.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/48412061_235489847348985_3949505046110011392_n.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white; -fx-font-size: 1em;" text="ADMIN" />
+                                 </children>
+                              </HBox>
+                              <Button mnemonicParsing="false" opacity="0.56" prefHeight="42.0" prefWidth="156.0" text="Evenement" textFill="#16107a" />
+                              <Button mnemonicParsing="false" opacity="0.56" prefHeight="42.0" prefWidth="155.0" text="Categorie" textFill="#16107a" />
+                              <Button mnemonicParsing="false" opacity="0.56" prefHeight="42.0" prefWidth="152.0" text="BOUTON3" textFill="#16107a" />
+                           </children>
+                        </VBox>
+                        <AnchorPane prefHeight="305.0" prefWidth="531.0">
+                           <children>
+                              <AnchorPane layoutY="-2.0" prefHeight="318.0" prefWidth="557.0">
+                                 <children>
+                                    <ImageView fitHeight="366.0" fitWidth="557.0" layoutY="2.0" opacity="0.61" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/q0FnMwInbO.png" />
+                                       </image>
+                                    </ImageView>
+                                    <TextField fx:id="lieu" layoutX="21.0" layoutY="159.0" promptText="lieu" />
+                                    <TextField fx:id="description" layoutX="21.0" layoutY="216.0" promptText="description" />
+                                    <DatePicker fx:id="date_event" layoutX="231.0" layoutY="216.0" promptText="date" />
+                                    <TextField fx:id="id" layoutX="21.0" layoutY="52.0" promptText="id" />
+                                    <TextField fx:id="titre" layoutX="21.0" layoutY="109.0" promptText="titre" />
+                                    <TextField fx:id="nbplace" layoutX="243.0" layoutY="159.0" promptText="Nbplace" />
+                                    <ComboBox fx:id="idCat" layoutX="242.0" layoutY="109.0" prefWidth="150.0" />
+                                    <TextField fx:id="nom_image" layoutX="252.0" layoutY="52.0" promptText="image" />
+                                    <ImageView fx:id="UploadImage" fitHeight="119.0" fitWidth="139.0" layoutX="416.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/drag-and-drop-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Button fx:id="annuler" layoutX="324.0" layoutY="260.0" mnemonicParsing="false" onAction="#anuulerbtn" prefHeight="42.0" prefWidth="137.0" style="-fx-background-color: #143e64;" text="Retour" textFill="#250505" />
+                                    <Button fx:id="ajoute" layoutX="102.0" layoutY="260.0" mnemonicParsing="false" onAction="#ajoutevent" prefHeight="42.0" prefWidth="137.0" style="-fx-background-color: #143e64;" text="Ajouter" textFill="#1e0505" />
+                                    <Button fx:id="uploadImage" layoutX="438.0" layoutY="39.0" mnemonicParsing="false" onAction="#uploadImage" prefHeight="50.0" prefWidth="108.0" style="-fx-background-color: #143e64;" text="Image" textFill="#170202" />
+                                    <ImageView fitHeight="42.0" fitWidth="59.0" layoutX="109.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/add.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="324.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/50722.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="446.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/drag-and-drop-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

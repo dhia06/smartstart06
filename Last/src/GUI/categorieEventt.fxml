@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.CategorieEventtController">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="408.0" prefWidth="724.0">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <children>
+                  <HBox maxHeight="-Infinity" prefHeight="84.0" prefWidth="700.0" style="-fx-background-color: #353942;">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="80.0" prefWidth="168.0">
+                           <children>
+                              <ImageView fitHeight="50.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Image/74325490_2895931740431458_4796052420230643712_n.png" />
+                                 </image>
+                              </ImageView>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white; -fx-font-size: 1em;" text="Smart Start" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: 54;">
+                           <children>
+                              <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: #3e3e3e;">
+                                 <children>
+                                    <TextField promptText="SEARCH HERE" />
+                                    <ImageView fitHeight="150.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/56531200_2283714838552875_5001936264589475840_n.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" />
+                        <HBox prefHeight="100.0" prefWidth="200.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <VBox maxWidth="-Infinity" prefWidth="150.0" style="-fx-background-color: #353942;">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="50.0" prefWidth="130.0" style="-fx-background-color: #353942; -fx-border-color: white;">
+                                 <children>
+                                    <ImageView fitHeight="50.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/48412061_235489847348985_3949505046110011392_n.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white; -fx-font-size: 1em;" text="ADMIN" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <AnchorPane prefHeight="244.0" prefWidth="450.0">
+                           <children>
+                              <AnchorPane prefHeight="302.0" prefWidth="539.0">
+                                 <children>
+                                    <ImageView fitHeight="324.0" fitWidth="589.0" opacity="0.56" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/q0FnMwInbO.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Button fx:id="ajoutecE" layoutX="439.0" layoutY="154.0" mnemonicParsing="false" onAction="#ajoutercatE" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #143e64;" text="Ajouter" textFill="#1b0404" />
+                                    <Button fx:id="retourE" layoutX="439.0" layoutY="63.0" mnemonicParsing="false" onAction="#btnretourE" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #143e64;" text="Retour" textFill="#080628" />
+                                    <TableView fx:id="tabcatE" layoutX="21.0" layoutY="49.0" onMouseClicked="#click_afficheCE" prefHeight="173.0" prefWidth="373.0">
+                                      <columns>
+                                        <TableColumn fx:id="idcategorieE" prefWidth="120.0" text="id " />
+                                        <TableColumn fx:id="libellecategoirE" prefWidth="143.0" text="libelle" />
+                                          <TableColumn fx:id="descriptioncolE" minWidth="0.0" prefWidth="109.0" text="description" />
+                                      </columns>
+                                    </TableView>
+                                    <ImageView fitHeight="25.0" fitWidth="44.0" layoutX="448.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/50722.png" />
+                                       </image>
+                                    </ImageView>
+                                    <TextField fx:id="idcatE" layoutX="36.0" layoutY="252.0" promptText="id.." />
+                                    <TextField fx:id="libellecatE" layoutX="36.0" layoutY="293.0" promptText="libelle" />
+                                    <TextField fx:id="descriptioncE" layoutX="232.0" layoutY="242.0" prefHeight="75.0" prefWidth="149.0" promptText="description ...." />
+                                    <Button fx:id="supprimercE" layoutX="439.0" layoutY="255.0" mnemonicParsing="false" onAction="#suppcategorieE" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #143e64;" text="Supprimer" textFill="#030101" />
+                                    <ImageView fitHeight="34.0" fitWidth="39.0" layoutX="444.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/add.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="34.0" fitWidth="33.0" layoutX="444.0" layoutY="264.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/basket.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.EventtController">
+   <children>
+      <AnchorPane prefHeight="506.0" prefWidth="769.0">
+         <children>
+            <ImageView fitHeight="493.0" fitWidth="769.0" layoutX="-1.0" layoutY="73.0" opacity="0.39" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/q0FnMwInbO.png" />
+               </image>
+            </ImageView>
+            <AnchorPane layoutY="-1.0" prefHeight="74.0" prefWidth="769.0" style="-fx-background-color: #353942;">
+               <children>
+                  <Button layoutX="270.0" layoutY="19.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="181.0" style="-fx-background-color: #353942;" text="Evenement" textFill="#b8bdd7">
+                     <font>
+                        <Font name="Arial" size="20.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="55.0" fitWidth="37.0" layoutX="233.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Image/50199804-icono-inicio-blanco-blanco-en-el-negro.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="53.0" fitWidth="60.0" layoutX="672.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Image/white-shopping-cart-md.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="6.0" layoutY="6.0" text="Smart Start" textFill="#e1e0e0">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <TableView fx:id="Event_tab" layoutX="128.0" layoutY="75.0" onMouseClicked="#click_affiche" prefHeight="283.0" prefWidth="471.0">
+              <columns>
+                <TableColumn fx:id="id_COL" prefWidth="75.0" text="id" />
+                <TableColumn fx:id="titre_COL" prefWidth="75.0" text="titre" />
+                  <TableColumn fx:id="lieu_COL" prefWidth="75.0" text="lieu" />
+                  <TableColumn fx:id="description_COL" prefWidth="75.0" text="description" />
+                  <TableColumn fx:id="date_event_COL" prefWidth="75.0" text="date_event" />
+                  <TableColumn fx:id="nbplace_COL" prefWidth="75.0" text="nbplace" />
+                  <TableColumn fx:id="nom_image_COL" prefWidth="75.0" text="npm_image" />
+                  <TableColumn fx:id="categorie_COL" prefWidth="75.0" text="categorie" />
+              </columns>
+            </TableView>
+            <TextField fx:id="q1_aff" layoutX="609.0" layoutY="103.0" />
+            <TextField fx:id="q2_aff" layoutX="609.0" layoutY="134.0" />
+            <TextField fx:id="q3_aff" layoutX="609.0" layoutY="171.0" />
+            <TextField fx:id="q4_aff" layoutX="609.0" layoutY="209.0" />
+            <TextField fx:id="q5_aff" layoutX="609.0" layoutY="253.0" />
+            <TextField fx:id="q6_aff" layoutX="609.0" layoutY="290.0" />
+            <TextField fx:id="q7_aff" layoutX="609.0" layoutY="333.0" />
+            <TextField fx:id="q8_aff" layoutX="609.0" layoutY="367.0" />
+            <Label layoutX="613.0" layoutY="73.0" prefHeight="26.0" prefWidth="141.0" text="Information Evenement" />
+            <Button fx:id="supprimer" layoutX="531.0" layoutY="415.0" mnemonicParsing="false" onAction="#supprimer_evenement" prefHeight="37.0" prefWidth="104.0" style="-fx-background-color: #353942;" text="Supprimer" textFill="#e7e5eb" />
+            <Button fx:id="reservation" layoutX="416.0" layoutY="415.0" mnemonicParsing="false" onAction="#save_reservation" prefHeight="37.0" prefWidth="104.0" style="-fx-background-color: #353942;" text="reservation" textFill="#e7e5eb" />
+            <Button fx:id="b1" layoutX="650.0" layoutY="415.0" mnemonicParsing="false" onAction="#Ajout_Event" prefHeight="37.0" prefWidth="104.0" style="-fx-background-color: #353942;" text="Ajouter" textFill="#e7e5eb" />
+            <Button fx:id="evevt_aujour" layoutX="139.0" layoutY="415.0" mnemonicParsing="false" onAction="#evevt_aujour" prefHeight="37.0" prefWidth="149.0" style="-fx-background-color: #353942;" text="Evenement d'aujourd'hui" textFill="#eee1e1" />
+            <Button fx:id="nextevent" layoutX="303.0" layoutY="415.0" mnemonicParsing="false" onAction="#nextevent" prefHeight="37.0" prefWidth="104.0" style="-fx-background-color: #353942;" text="NextEvent" textFill="#f0ecf5" />
+            <VBox layoutX="-1.0" layoutY="71.0" prefHeight="439.0" prefWidth="132.0" style="-fx-background-color: #353942;">
+               <children>
+                  <HBox prefHeight="59.0" prefWidth="129.0" style="-fx-background-color: #353942; -fx-border-color: white;">
+                     <children>
+                        <ImageView fitHeight="33.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/48412061_235489847348985_3949505046110011392_n.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="User" textFill="#f2ecec">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Button fx:id="liste" mnemonicParsing="false" onAction="#liste" prefHeight="52.0" prefWidth="130.0" text="ListeEvent " />
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
