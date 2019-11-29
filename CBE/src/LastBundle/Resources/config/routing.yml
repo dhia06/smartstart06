@@ -1,0 +1,13 @@
+last_categorie:
+    resource: "@LastBundle/Resources/config/routing/categorie.yml"
+    prefix:   /categorie
+
+last_homepage:
+    path:     /
+    defaults: { _controller: LastBundle:Default:index }
+last_evenement:
+    resource: "@LastBundle/Resources/config/routing/evenement.yml"
+    prefix:   /evenement
+last_participation:
+    resource: "@LastBundle/Resources/config/routing/participation.yml"
+    prefix:   /participation

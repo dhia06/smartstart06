@@ -1,0 +1,28 @@
+participation_index:
+    path:     /
+    defaults: { _controller: "LastBundle:Participation:index" }
+    methods:  GET
+
+participation_show:
+    path:     /{paticipantId}/show
+    defaults: { _controller: "LastBundle:Participation:show" }
+    methods:  GET
+
+participation_new:
+    path:     /new
+    defaults: { _controller: "LastBundle:Participation:new" }
+    methods:  [GET, POST]
+
+participation_edit:
+    path:     /{paticipantId}/edit
+    defaults: { _controller: "LastBundle:Participation:edit" }
+    methods:  [GET, POST]
+
+participation_delete:
+    path:     /{paticipantId}/delete
+    defaults: { _controller: "LastBundle:Participation:delete" }
+    methods:  DELETE
+
+ajoutreservation:
+    path:     /ajoutre/{idEvent}
+    defaults: { _controller: "LastBundle:Participation:ajoutres" }

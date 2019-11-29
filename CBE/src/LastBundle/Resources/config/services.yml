@@ -1,0 +1,4 @@
+services:
+#    last.example:
+#        class: LastBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
