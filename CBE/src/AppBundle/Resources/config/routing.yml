@@ -1,0 +1,6 @@
+sav_homepage:
+    path:     /
+    defaults: { _controller: AppBundle:Default:index }
+indexadmin:
+    path:     /indexadmin
+    defaults: { _controller: AppBundle:Default:indexadmin }

@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Formations list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Lieu</th>
+                <th>Prix</th>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Nbrplaces</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for formation in formations %}
+            <tr>
+                <td><a href="{{ path('formation_show', { 'id': formation.id }) }}">{{ formation.id }}</a></td>
+                <td>{{ formation.nom }}</td>
+                <td>{{ formation.lieu }}</td>
+                <td>{{ formation.prix }}</td>
+                <td>{{ formation.date }}</td>
+                <td>{{ formation.description }}</td>
+                <td>{{ formation.image }}</td>
+                <td>{{ formation.nbrPlaces }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('formation_show', { 'id': formation.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('formation_edit', { 'id': formation.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('formation_new') }}">Create a new formation</a>
+        </li>
+    </ul>
+{% endblock %}
