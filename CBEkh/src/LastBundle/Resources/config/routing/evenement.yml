@@ -22,3 +22,7 @@ evenement_delete:
     path:     /{id}/delete
     defaults: { _controller: "LastBundle:Evenement:delete" }
     methods:  DELETE
+calendrier:
+    path:     /calendrier
+    defaults: { _controller: "LastBundle:Evenement:calendrier" }
+

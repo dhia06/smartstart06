@@ -7,10 +7,23 @@
         {{ form_widget(form) }}
         <input type="submit" value="Create" />
     {{ form_end(form) }}
+    <ul class="social-links">
+        <li> {{ socialButtons( { 'facebook': {'locale':'fr_FR', 'send':true}} ) }}</li>
+        <li>
+            {{ googleplusButton( {'locale':'fr', 'url':'http://google.fr' }) }}
+        </li>
+
+    </ul>
+
 
     <ul>
         <li>
             <a href="{{ path('categorie_index') }}">Back to the list</a>
         </li>
     </ul>
+    <ul class="social-links">
+        <li> {{ socialButtons( { 'facebook': {'locale':'fr_FR', 'send':true}} ) }}</li>
+
+    </ul>
+
 {% endblock %}

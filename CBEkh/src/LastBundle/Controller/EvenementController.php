@@ -123,4 +123,9 @@ class EvenementController extends Controller
             ->getForm()
         ;
     }
+    public function calendrierAction()
+    {$events = $this->getDoctrine()->getRepository(Evenement::class)->findAll();
+        return $this->render('evenement/calendrier.html.twig', array(
+            'events' => $events));
+    }
 }

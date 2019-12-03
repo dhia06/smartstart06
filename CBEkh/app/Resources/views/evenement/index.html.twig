@@ -2,7 +2,7 @@
 
 {% block body %}
     <h1>Evenements list</h1>
-
+    {{ socialButtons( { 'facebook': {'locale':'fr_FR', 'send':true}} ) }}
     <table>
         <thead>
             <tr>
@@ -40,6 +40,8 @@
         {% endfor %}
         </tbody>
     </table>
+
+
 
     <ul>
         <li>

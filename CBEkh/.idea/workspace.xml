@@ -112,25 +112,31 @@
       <path value="$PROJECT_DIR$/vendor/willdurand/negotiation" />
       <path value="$PROJECT_DIR$/vendor/friendsofsymfony/rest-bundle" />
       <path value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle" />
+      <path value="$PROJECT_DIR$/vendor/toiba/fullcalendar-bundle" />
+      <path value="$PROJECT_DIR$/vendor/nomaya/social-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1TtXTZrXsFgU3fUBAnURo56wRXp" />
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="AvisAdmin&#9;FILE&#9;file://C:/xampp/htdocs/www/CBE/src/SAVBundle/Resources/config/doctrine/AvisAdmin.orm.yml" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Nursery_v0.2 - Copie (2)" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/LastBundle" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp6\www\CBEkh\src\AppBundle" />
+      <recent name="C:\wamp6\www\CBEkh\src\LastBundle\EventListener" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp6\www\CBEkh\src\LastBundle" />
       <recent name="C:\xampp\htdocs\www\CBE\src\SAVBundle\Resources\views\Cahier" />
       <recent name="C:\xampp\htdocs\www\CBE\src\SAVBundle\Resources\views\Avis" />
       <recent name="C:\xampp\htdocs\www\CBE\app\Resources" />
       <recent name="C:\xampp\htdocs\www\CBE\src\AppBundle\Resources\views\User" />
-      <recent name="C:\xampp\htdocs\www\CBE\src\AppBundle" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -141,7 +147,6 @@
       <command value="s doctrine:mapping:import --force MainBundle annotation" />
       <command value="s doctrine:schema:update --force " />
       <command value="s generate:bundle" />
-      <command value="s doctrine:generate:entity" />
       <command value="s doctrine:mapping:import --force LastBundle annotation" />
       <command value="s doctrine:generate:crud" />
       <command value="s doctrine:generate:entities EventBundle:Categorie" />
@@ -152,6 +157,19 @@
       <command value="s doctrine:generate:entities LastBundle:Participation" />
       <command value="s doctrine:generate:entities LastBundle:User" />
       <command value="s doctrine:generate:entities AppBundle:User" />
+      <command value="c require toiba/fullcalendar-bundle " />
+      <command value="s doctrine:generate:Eventlistener" />
+      <command value="s doctrine:generate:entity" />
+      <command value="s doctrine:generate:EntityManagerInterface" />
+      <command value="s generate:EntityManagerInterface" />
+      <command value="s doctrine:generate:EntityManagerInterface php" />
+      <command value="s doctrine:generate:EntityManagerInterface src" />
+      <command value="s doctrine:generate:EntityManagerInterface app" />
+      <command value="s doctrine:generate:EntityManager " />
+      <command value="c require --dev  nomaya/social-bundle" />
+      <command value="c  nomaya/social-bundle" />
+      <command value="c require nomaya/social-bundle" />
+      <command value="c update nomaya/social-bundle" />
     </option>
   </component>
   <component name="RunDashboard">
@@ -184,6 +202,7 @@
       <workItem from="1574678440638" duration="3386000" />
       <workItem from="1574932783415" duration="3246000" />
       <workItem from="1574963487448" duration="4706000" />
+      <workItem from="1575305386944" duration="18019000" />
     </task>
     <servers />
   </component>
