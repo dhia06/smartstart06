@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Feedback</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id7</th>
+                <td>{{ feedback.id7 }}</td>
+            </tr>
+            <tr>
+                <th>Objet7</th>
+                <td>{{ feedback.objet7 }}</td>
+            </tr>
+            <tr>
+                <th>Contenu7</th>
+                <td>{{ feedback.contenu7 }}</td>
+            </tr>
+            <tr>
+                <th>Mail7</th>
+                <td>{{ feedback.mail7 }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('feedback_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('feedback_edit', { 'id7': feedback.id7 }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
