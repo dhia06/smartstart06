@@ -1,0 +1,28 @@
+evenement_index:
+    path:     /
+    defaults: { _controller: "LastBundle:Evenement:index" }
+    methods:  GET
+
+evenement_show:
+    path:     /{id}/show
+    defaults: { _controller: "LastBundle:Evenement:show" }
+    methods:  GET
+
+evenement_new:
+    path:     /new
+    defaults: { _controller: "LastBundle:Evenement:new" }
+    methods:  [GET, POST]
+
+evenement_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "LastBundle:Evenement:edit" }
+    methods:  [GET, POST]
+
+evenement_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "LastBundle:Evenement:delete" }
+    methods:  DELETE
+calendrier:
+    path:     /calendrier
+    defaults: { _controller: "LastBundle:Evenement:calendrier" }
+

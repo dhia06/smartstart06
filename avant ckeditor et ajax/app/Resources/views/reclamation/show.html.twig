@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Reclamation</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id11</th>
+                <td>{{ reclamation.id11 }}</td>
+            </tr>
+            <tr>
+                <th>Sujet11</th>
+                <td>{{ reclamation.sujet11 }}</td>
+            </tr>
+            <tr>
+                <th>Text11</th>
+                <td>{{ reclamation.text11 }}</td>
+            </tr>
+            <tr>
+                <th>Phone11</th>
+                <td>{{ reclamation.phone11 }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('reclamation_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('reclamation_edit', { 'id11': reclamation.id11 }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

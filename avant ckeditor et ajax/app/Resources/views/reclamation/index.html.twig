@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+
+    <button><a href="{{ path ('reclamation_recherche') }}" >recherche</a></button>
+
+
+
+    <h1>Reclamations list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id11</th>
+                <th>Sujet11</th>
+                <th>Text11</th>
+                <th>Phone11</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for reclamation in reclamations %}
+            <tr>
+                <td><a href="{{ path('reclamation_show', { 'id11': reclamation.id11 }) }}">{{ reclamation.id11 }}</a></td>
+                <td>{{ reclamation.sujet11 }}</td>
+                <td>{{ reclamation.text11 }}</td>
+                <td>{{ reclamation.phone11 }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('reclamation_show', { 'id11': reclamation.id11 }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('reclamation_edit', { 'id11': reclamation.id11 }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('reclamation_new') }}">Create a new reclamation</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,201 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <br><br><br><br><br><br><br><br>
+    <div class ="clear-2">
+        <div class ="clear-2">
+            <div class ="clear-2">
+
+                {% include '@FullCalendar/Calendar/calendar.html.twig' %}
+
+            </div>
+        </div>
+    </div>
+    <script>
+
+        function afficherMsg()
+        {
+            alert("rservation avec succés");
+        }
+    </script>
+
+    <script>
+        function checkQuant() {
+            var value = document.getElementById('nbplace').value;
+            if (value == 0) {
+                alert("nb de place reserve");
+            }
+        }
+
+        function submit() {
+
+        }
+    </script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+
+
+    <div class="crumbs text-center">
+        <div class="container">
+            <div class="row">
+                <ul class="btn-group btn-breadcrumb bc-list">
+                    <li class="btn btn1">
+                        <a >
+                            <i class="glyphicon glyphicon-home"></i>
+                        </a>
+                    </li>
+                    <li class="btn btn2">
+                        <a href="index.html.twig">Listes des evenements</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="w3-container">
+
+
+        <br/>
+    </div>
+    <!-- Shop -->
+    <div class="innerf-pages section">
+        <div class="container-cart">
+            <!-- product left -->
+            <div class="side-bar col-md-3">
+                <!--preference -->
+
+            </div></div>
+        <!-- //product left -->
+
+
+
+        {% for e in events %}
+
+        <!-- product right -->
+        <div class="left-ads-display col-md-9">
+            <div class="wrapper_top_shop">
+                <!-- product-sec1 -->
+                <div class="product-sec1">
+                    <!-- row1-->
+                    <div class="col-md-3 product-men">
+                        <div class="product-chr-info chr">
+                            <div class="thumbnail">
+
+                                <div class="entry-content" align="left" >
+
+                                    <a>
+                                        <img src="{{ asset ( e.nomImage ) }} "  style="width: 80px; height:80px"  >
+
+
+                                    </a>
+                                </div>
+                                <div class="caption">
+                                    <h4>{{ e.titre}}</h4>
+                                    <p>{{ e.description }}</p>
+                                    <p>{{ e.lieu }}</p>
+                                    <div class="matrlf-mid">
+
+                                        <ul{# class="price-list"#} style="color: green;">
+                                            <li>Date {{ e.dateEvent|date("d/m/y")  }}  </li>
+
+                                        </ul>
+
+                                        <div class="clearfix"> </div>
+                                    </div>
+                                    <form action="#" method="post">
+                                        <input type="hidden" name="cmd" value="_cart">
+                                        <input type="hidden" name="add" value="1">
+                                        <input type="hidden" name="chr_item" value="Book1">
+                                        <input type="hidden" name="amount" value="100.00">
+                                        <a></a> <i class="fab fa-facebook"></i>Facebook</i></a>
+                                        <a></a><i class="fab fa-google-plus-square"> </i>Google +</i></a>
+                                        <a></a> <i class="fab fa-twitter"></i> </i>Instagram</i></a>
+
+                                        <center><a   onclick="afficherMsg()" href="{{ path('ajoutreservation',{'idEvent':e.Id}) }}"> <span class="btn-danger btn-sm chr-cart pchr-cart" type="submit"> Reservaer <i class="fa fa-cart-plus" aria-hidden="true"></i></span></a>
+
+
+                                            <a href="#" data-toggle="modal" data-target="#myModal1"></a>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- row3 -->
+
+                        <!-- //row3 -->
+                        <div class="clearfix"></div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+        </div>
+
+    </div>
+
+    </div>
+    </article>
+
+
+    {% endfor %}
+    <div class="clearfix"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css">
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="https://momentjs.com/downloads/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/locale-all.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('#calendar-holder').fullCalendar({
+                locale: 'fr',
+                header: {
+                    left: 'prev, next, today',
+                    center: 'title',
+                    right: 'month, agendaWeek, agendaDay'
+                },
+                lazyFetching: true,
+                navLinks: true,
+                eventSources: [
+                    {
+                        url: "{{ path('fullcalendar_load_events') }}",
+                        type: 'POST',
+                        data:  {
+                            filters: {}
+                        },
+                        error: function () {
+                            alert('There was an error while fetching FullCalendar!');
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+{% endblock %}

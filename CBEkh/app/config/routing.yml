@@ -1,0 +1,12 @@
+last:
+    resource: "@LastBundle/Resources/config/routing.yml"
+    prefix:   /event
+
+app:
+    resource: '@AppBundle/Resources/config/routing.yml'
+    #type: annotation
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+toiba_fullcalendar:
+    resource: "@FullCalendarBundle/Resources/config/routing.yaml"

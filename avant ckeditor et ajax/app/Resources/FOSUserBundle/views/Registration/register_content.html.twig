@@ -1,0 +1,19 @@
+{% trans_default_domain 'FOSUserBundle' %}
+<div class="register-box">
+    <div class="register-logo">
+        <a href=""><b>Smart</b> Start</a>
+    </div>
+
+    <div class="register-box-body">
+        <p class="login-box-msg">Créer un compte</p>
+
+{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'} , 'attr': {'class': 'control-label'}}) }}
+    {{ form_widget(form) }}
+        {{ form_errors(form) }}
+        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+<div>
+    <input type="submit" value="{{ 'registration.submit'|trans }}" />
+</div>
+{{ form_end(form) }}
+    </div>
+</div>

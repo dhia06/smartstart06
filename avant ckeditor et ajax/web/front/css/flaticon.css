@@ -1,0 +1,44 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 05/02/2018 17:15
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("../fonts/Flaticon.html");
+  src: url("../fonts/Flaticond41d.html?#iefix") format("embedded-opentype"),
+       url("../fonts/Flaticon.woff") format("woff"),
+       url("../fonts/Flaticon.ttf") format("truetype"),
+       url("../fonts/Flaticon-2.html#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("../fonts/Flaticon-2.html#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+        font-size: 20px;
+font-style: normal;
+margin-left: 0px;
+}
+
+.flaticon-paper:before { content: "\f100"; }
+.flaticon-play-button:before { content: "\f101"; }
+.flaticon-phone-call:before { content: "\f102"; }
+.flaticon-location-pin:before { content: "\f103"; }
+.flaticon-placeholder:before { content: "\f104"; }
+.flaticon-gps:before { content: "\f105"; }
+.flaticon-clock:before { content: "\f106"; }
+.flaticon-e-mail-envelope:before { content: "\f107"; }
+.flaticon-calendar:before { content: "\f108"; }
+.flaticon-shapes:before { content: "\f109"; }
+.flaticon-flag:before { content: "\f10a"; }
+.flaticon-microphone:before { content: "\f10b"; }
+.flaticon-tool:before { content: "\f10c"; }

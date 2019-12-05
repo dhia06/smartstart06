@@ -1,0 +1,265 @@
+{% extends 'base.html.twig' %}
+
+{#
+
+{% block header %}
+    <!--Header-Upper-->
+    <div class="header-upper">
+        <div class="container">
+            <div class="clearfix">
+
+                <div class="float-left logo-box">
+                    <div class="logo"><a href=""><img src="{{ asset('front/images/Cit-de-la-culture.png') }}" alt="" title=""></a></div>
+                </div>
+
+                <div class="nav-outer clearfix">
+
+                    <!-- Main Menu -->
+                    <nav class="main-menu navbar-expand-md">
+                        <div class="navbar-header">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+
+                        <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
+                            <ul class="navigation clearfix">
+                                <li><a href="{{ path ('user_homepage') }}">Home</a></li>
+                                <li class="dropdown"><a href="#">About</a>
+                                    <ul>
+                                        <li><a href="">About Us</a></li>
+                                        <li><a href="">Speakers</a></li>
+                                        <li><a href="">Speaker Details</a></li>
+                                        <li><a href="">Error Page</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"><a href="#">Shedule</a>
+                                    <ul>
+                                        <li><a href="">Shedule</a></li>
+                                        <li><a href="">Shedule Details</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"><a href="#">Sponsors</a>
+                                    <ul>
+                                        <li><a href="sponsor.html">Sponsors</a></li>
+                                        <li><a href="sponsor-details.html">Sponsors Details</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"><a href="#">Blog</a>
+                                    <ul>
+                                        <li><a href="">Blog</a></li>
+                                        <li><a href="">Blog Details</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="">Contact us</a></li>
+                            </ul>
+                        </div>
+
+                    </nav>
+
+                    <!--Button Box-->
+                    <div class="button-box">
+                        {% if not is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                            <li><a href="{{ path('fos_user_registration_register') }}" class="theme-btn btn-style-one" title="">s'inscrire</a></li>
+
+                        {% else %}
+                            <li><a class="theme-btn btn-style-one" href="{{ path('fos_user_security_logout') }}" title="">se deconnecter</a></li>
+                        {% endif %}
+                    </div>
+
+                    <!--Search Box Outer-->
+                    <div class="search-box-outer">
+                        <div class="dropdown">
+                            <button class="search-box-btn dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-search"></span></button>
+                            <ul class="dropdown-menu pull-right search-panel" aria-labelledby="dropdownMenu3">
+                                <li class="panel-outer">
+                                    <div class="form-container">
+                                        <form method="post" action="http://html.tonatheme.com/2019/Wiscon/blog.html">
+                                            <div class="form-group">
+                                                <input type="search" name="field-name" value="" placeholder="Search Here" required>
+                                                <button type="submit" class="search-btn"><span class="fa fa-search"></span></button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--End Header Upper-->
+
+    <!--Sticky Header-->
+    <div class="sticky-header stricky">
+        <div class="container clearfix">
+            <!--Logo-->
+            <div class="logo float-left">
+                <a href="index-2.html" class="img-responsive"><img src="{{ asset('front/images/Cit-de-la-culture.png')}}" alt="" title=""></a>
+            </div>
+
+            <!--Right Col-->
+            <div class="right-col float-right">
+                <!-- Main Menu -->
+                <nav class="main-menu navbar-expand-md">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent1">
+                        <ul class="navigation clearfix">
+                            <li><a href="{{ path ('user_homepage') }}">Home</a></li>
+                            <li class="dropdown"><a href="#">About</a>
+                                <ul>
+                                    <li><a href="about-us.html">About Us</a></li>
+                                    <li><a href="speakers.html">Speakers</a></li>
+                                    <li><a href="speakers-details.html">Speaker Details</a></li>
+                                    <li><a href="error-page.html">Error Page</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown"><a href="#">Shedule</a>
+                                <ul>
+                                    <li><a href="shedule.html">Shedule</a></li>
+                                    <li><a href="shedule-details.html">Shedule Details</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown"><a href="#">Sponsors</a>
+                                <ul>
+                                    <li><a href="sponsor.html">Sponsors</a></li>
+                                    <li><a href="sponsor-details.html">Sponsors Details</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown"><a href="#">Blog</a>
+                                <ul>
+                                    <li><a href="blog.html">Blog</a></li>
+                                    <li><a href="blog-single.html">Blog Details</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="contact-us.html">Contact us</a></li>
+                        </ul>
+                    </div>
+                </nav><!-- Main Menu End-->
+            </div>
+
+        </div>
+    </div>
+    <!--End Sticky Header-->
+{% endblock %}
+#}
+
+{% block button %}
+
+    <div class="button-box">
+        {% if not is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+            <li><a href="{{ path('fos_user_registration_register') }}" class="theme-btn btn-style-one" title="">s'inscrire</a></li>
+
+        {% else %}
+            <li><a class="theme-btn btn-style-one" href="{{ path('fos_user_security_logout') }}" title="">se deconnecter</a></li>
+        {% endif %}
+    </div>
+
+{% endblock %}
+
+{% block body %}
+    <br><br>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <head>
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <title>AdminLTE 2 | Log in</title>
+            <!-- Tell the browser to be responsive to screen width -->
+            <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+            <!-- Bootstrap 3.3.7 -->
+            <link rel="stylesheet" href="{{ asset('back/bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
+            <!-- Font Awesome -->
+            <link rel="stylesheet" href="{{ asset('back/bower_components/font-awesome/css/font-awesome.min.css') }}">
+            <!-- Ionicons -->
+            <link rel="stylesheet" href="{{ asset('back/bower_components/Ionicons/css/ionicons.min.css') }}">
+            <!-- Theme style -->
+            <link rel="stylesheet" href="{{ asset('back/dist/css/AdminLTE.min.css') }}">
+            <!-- iCheck -->
+            <link rel="stylesheet" href="{{ asset('back/plugins/iCheck/square/blue.css') }}">
+
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+        </head>
+
+
+    </head>
+
+<body class="hold-transition login-page">
+
+    <div class="login-box">
+        <div class="login-box-body">
+            <p class="login-box-msg">Sign in to start your session</p>
+            {% trans_default_domain 'FOSUserBundle' %}
+
+            {% if error %}
+                <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
+
+            <form action="{{ path("fos_user_security_check") }}" method="post">
+                {% if csrf_token %}
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                {% endif %}
+
+                <div class="form-group has-feedback">
+                    <input type="text" id="username" class="form-control" placeholder="{{ 'security.login.username'|trans }}" name="_username" value="{{ last_username }}" required="required" autocomplete="username" />
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                </div>
+
+                <div class="form-group has-feedback">
+                    <input type="password" id="password" class="form-control" placeholder="{{ 'security.login.password'|trans }}" class="form-control" name="_password" required="required" autocomplete="current-password" />
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div class="checkbox icheck">
+                            <label>
+                                <input type="checkbox" id="remember_me" name="_remember_me" value="on" />{{ 'security.login.remember_me'|trans }}
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- /.col -->
+                    <div class="col-xs-4">
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">  {{ 'security.login.submit'|trans }}</button>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </form>
+            <a href="">oublié mot de passe </a><br><br>
+        </div>
+        <!-- /.login-box-body -->
+    </div>
+    <!-- /.login-box -->
+
+    <script src="{{ asset('back/bower_components/jquery/dist/jquery.min.js') }}"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="{{ asset('back/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <!-- iCheck -->
+    <script src="{{ asset('back/plugins/iCheck/icheck.min.js') }}"></script>
+    <script>
+        $(function () {
+            $('input').iCheck({
+                checkboxClass: 'icheckbox_square-blue',
+                radioClass: 'iradio_square-blue',
+                increaseArea: '20%' // optional
+            });
+        });
+    </script>
+    </body>
+    </html>
+
+{% endblock %}
+{% block navfooter %}
+{% endblock %}
