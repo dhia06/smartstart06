@@ -3,6 +3,8 @@
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
+use JavierEguiluz\Bundle\EasyAdminBundle\EasyAdminBundle;
+
 
 class AppKernel extends Kernel
 {
@@ -18,7 +20,15 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new AppBundle\AppBundle(),
             new FOS\UserBundle\FOSUserBundle(),
-            new MainBundle\MainBundle(),
+            new ActualiteBundle\ActualiteBundle(),
+            new EasyAdminBundle(),
+            new Nomaya\SocialBundle\NomayaSocialBundle(),
+            new CMEN\GoogleChartsBundle\CMENGoogleChartsBundle(),
+
+
+
+
+
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

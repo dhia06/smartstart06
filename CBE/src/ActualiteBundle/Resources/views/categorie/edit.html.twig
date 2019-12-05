@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+    <div class="modal-header">
+        <h1 style="color: #003147"><b><i><center>Modifier une catégorie</center></i></b></h1>
+    </div>
+
+
+    <div class="modal-body">
+        <div class="row">
+            {{ form_start(edit_form) }}
+            {{ form_label(edit_form.libelle, 'Libelle: ',{'attr': {'class': 'control-label'}})  }}
+            {{ form_widget(edit_form.libelle) }}
+        </div>
+
+        <div class="row">
+
+            <div class="form-group col-xs-5">
+
+                {{ form_label(edit_form.description, 'Description : ',{'attr': {'class': 'control-label'}})  }}
+                {{ form_widget(edit_form.description,  {'attr': {'class': 'form-control'}}) }}
+
+            </div>
+
+
+
+
+            <div class="modal-footer">
+                <a href="{{ path('categorie_affiche') }}" class="btn btn-success" data-dismiss="modal">Annuler</a>
+
+                {{ form_widget(edit_form.Ajouter,{'label': 'Ajouter', 'attr': {'class': 'btn btn-success btn-rounded'} }) }}
+            </div>
+
+
+            {{ form_end(edit_form) }}
+
+
+        </div>
+    </div>
+{% endblock %}

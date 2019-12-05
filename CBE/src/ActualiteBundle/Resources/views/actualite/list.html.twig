@@ -1,0 +1,74 @@
+
+{% extends "base1.html.twig" %}
+{% block body %}
+
+ <section class="team-section">
+    <div class="container">
+        <div class="sec-title-two text-center">
+    <h6><b>NOS ACTUALITES</b></h6>
+            <h2>Liste des<span>Actualités</span></h2>
+
+              {% for t in actualite %}
+
+                  <div class="sec-title-two text-center">
+                      <a href="#"><img src="{{ asset('images/' ~ t.img)}} " width="700" height="700" /></a>
+                  </div>
+                  <div class="sec-title-two text-center">
+                      <h3>{{ t.titre }} </h3>
+                  </div>
+                  <div class="sec-title-two text-center">
+                      <p>{{ t.description}}</p>
+                  </div>
+                  <div class="sec-title-two text-center">
+                      <ul class="social-links">
+                          <li>{{ socialButtons( { 'facebook': {'locale':'fr_FR', 'send':true}} ) }}
+                              <button type="button" class="btn btn-default " size="6 px"><a href="{{ path('actualite_click',{id:t.id})}}"style="color:#0b3e6f">VU</a></button>
+                          </li>
+
+                      </ul>
+                  </div>
+
+        </div>
+    </div>
+                  </section>
+
+
+
+
+
+
+
+
+
+                    {% endfor %}
+    <div>
+
+    <td><button class="btn btn-success " ><a href="{{ path('actualite_user') }}" style="color: aliceblue" >Ajouter une Actualite</a></button></td>
+
+    </div>
+
+
+
+
+
+{% endblock %}
+{#
+{% block javascripts %}
+<script src="{{ asset('front/js/jquery.js') }}"></script>
+<script src="{{ asset('front/js/popper.min.js') }}"></script>
+<script src="{{ asset('front/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('front/js/jquery.fancybox.js') }}"></script>
+<script src="{{ asset('front/js/owl.js') }}"></script>
+<script src="{{ asset('front/js/wow.js') }}"></script>
+<script src="{{ asset('front/js/jquery.countTo.js') }}"></script>
+<script src="{{ asset('front/js/jquery.countdown.min.js') }}"></script>
+<script src="{{ asset('front/js/appear.js') }}"></script>
+<script src="{{ asset('front/js/jquery-ui.js') }}"></script>
+<script src="{{ asset('front/js/isotope.js') }}"></script>
+<script src="{{ asset('front/js/bxslider.js') }}"></script>
+<script src="{{ asset('front/js/validate.js') }}"></script>
+<script src="{{ asset('front/js/custom.js') }}"></script>
+
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+#}

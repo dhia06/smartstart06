@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+ {% block title %}
+     Gestion ACTUALITE || ADMIN
+ {% endblock %}
+
+{% block body %}
+
+    <h1 style="color: #003147"><b><i><center>LISTE DES ACTUALITES</center></i></b></h1>
+    <script src="{{ asset('js2/jquery.min.js') }}"></script>
+    <input type="text" id="search" placeholder="CHERCHER ACTUALITE ...">
+
+    <table class="table table-bordered table-striped" cellspacing="0" id="tableac" border="2">
+        <thead>
+        <tr>
+            <th>TITRE</th>
+            <th>DATE</th>
+            <th>DESCRIPTION</th>
+            <th>IMAGE</th>
+            <th>NOMBRE DE CLICK</th>
+            <th>ETAT</th>
+{#            <th>cat</th>#}
+
+        </tr>
+        <link rel="stylesheet" href="{{ asset('css/table.css') }}">
+        </thead>
+    <tbody>
+    {% for a in actualite %}
+    <tr>
+
+        <td>{{ a.titre }} </td>
+        <td>{{ a.date | date("d/m/y") }}</td>
+        <td style="">{{ a.description }}</td>
+        <td style="..."><img src="{{ asset('images/' ~ a.img)}}" width="50" height="50"></td>
+        <td>{{ a.nbClick }}</td>
+        <td> {% if a.etat==1  %} En Cour {% else %} Resolu {% endif %}</td>
+
+
+{#     <td>{{ a.libelle }}</td>#}
+
+        <td><button type="button" ><a href="{{ path('actualite_modifier',{id : a.id}) }}" style="color:#0b3e6f">Modifier</a></button></td>
+        <td><button type="button" ><a href="{{ path('actualite_supprimer',{id : a.id})  }}" onclick="return confirm('Etes vous sur de supprimer cette actualité?')" style="color:#9c3328">Supprimer</a></button></td>
+        <td><button type="button" ><a href="{{ path('actualite_traiter',{id : a.id})  }}" onclick="return confirm('Traiter ')" style="color:#003147">APPROUVER L'ACTUALITE</a></button></td>
+
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+    <ul>
+        <li>
+           <b><i> <a href="{{ path('actualite_ajout') }}">AJOUTER UNE ACTUALITE <img src="{{ asset('images/ajout.png') }}"></a></i></b>
+        </li>
+    </ul>
+    <script>
+        $(document).ready(function(){
+            $('#search').keyup(function(){
+                search_table($(this).val());
+            });
+            function search_table(value){
+                $('#tableac tbody tr').each(function(){
+                    var found = 'false';
+                    $(this).each(function(){
+                        if($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0)
+                        {
+                            found = 'true';
+                        }
+                    });
+                    if(found == 'true')
+                    {
+                        $(this).show();
+
+                    }
+                    else
+                    {
+                        $(this).hide();
+
+                    }
+                });
+            }
+        });
+    </script>
+
+
+{% endblock %}
