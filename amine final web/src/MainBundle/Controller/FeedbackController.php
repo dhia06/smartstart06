@@ -64,7 +64,6 @@ class FeedbackController extends Controller
             'delete_form' => $deleteForm->createView(),
         ));
     }
-
     /**
      * Displays a form to edit an existing feedback entity.
      *
@@ -120,5 +119,9 @@ class FeedbackController extends Controller
             ->setMethod('DELETE')
             ->getForm()
         ;
+    }
+    public function repondreAction()
+    {
+        return $this->render('feedback/repondre.html.twig');
     }
 }

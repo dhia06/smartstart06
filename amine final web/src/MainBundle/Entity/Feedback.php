@@ -33,7 +33,7 @@ class Feedback
     /**
      * @var string
      *
-     * @ORM\Column(name="contenu7", type="string", length=50, nullable=false)
+     * @ORM\Column(name="contenu7", type="string", length=255, nullable=false)
      */
     private $contenu7;
 

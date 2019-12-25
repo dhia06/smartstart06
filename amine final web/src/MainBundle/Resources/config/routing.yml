@@ -11,3 +11,7 @@ main_feedback:
 main_homepage:
     path:     /
     defaults: { _controller: MainBundle:Default:index }
+
+main_templatepage:
+    path:     /template
+    defaults: { _controller: MainBundle:Default:template }

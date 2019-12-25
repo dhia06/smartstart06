@@ -439,4 +439,5 @@ class FosUser
     {
         return (string) $this->id;
     }
+
 }

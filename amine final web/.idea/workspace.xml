@@ -115,17 +115,23 @@
       <path value="$PROJECT_DIR$/vendor/willdurand/negotiation" />
       <path value="$PROJECT_DIR$/vendor/friendsofsymfony/rest-bundle" />
       <path value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle" />
+      <path value="$PROJECT_DIR$/vendor/friendsofsymfony/ckeditor-bundle" />
+      <path value="$PROJECT_DIR$/vendor/seld/phar-utils" />
+      <path value="$PROJECT_DIR$/vendor/seld/jsonlint" />
+      <path value="$PROJECT_DIR$/vendor/justinrainbow/json-schema" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
     </include_path>
   </component>
   <component name="ProjectId" id="1TtXTZrXsFgU3fUBAnURo56wRXp" />
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="AvisAdmin&#9;FILE&#9;file://C:/xampp/htdocs/www/CBE/src/SAVBundle/Resources/config/doctrine/AvisAdmin.orm.yml" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/MainBundle/Resources/views/Reclamation" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -148,6 +154,20 @@
       <command value="s doctrine:generate:entities MainBundle:Reclamation" />
       <command value="s doctrine:generate:entities MainBundle:FosUser" />
       <command value="s doctrine:generate:crud" />
+      <command value="composer require egeloen/ckeditor-bundle" />
+      <command value="c require friendsofsymfony/ckeditor-bundle*" />
+      <command value="c require egeloen/ckeditor-bundle" />
+      <command value="c dump_autoload" />
+      <command value="c dump-autoload" />
+      <command value="c self-update" />
+      <command value="c require friendsofsymfony/ckeditor-bundle" />
+      <command value="s ckeditor:install" />
+      <command value="php bin/console assets:install web" />
+      <command value="composer require knplabs/knp-paginator-bundle" />
+      <command value="c  require knplabs/knp-paginator-bundle" />
+      <command value="s cache:clear" />
+      <command value="c require composer/composer" />
+      <command value="c require knplabs/knp-paginator-bundle" />
     </option>
   </component>
   <component name="RunDashboard">
@@ -179,7 +199,9 @@
       <workItem from="1574675305876" duration="2474000" />
       <workItem from="1574678440638" duration="3386000" />
       <workItem from="1574693571972" duration="640000" />
-      <workItem from="1574783796247" duration="79303000" />
+      <workItem from="1574783796247" duration="84982000" />
+      <workItem from="1575399989936" duration="65224000" />
+      <workItem from="1577273509108" duration="344000" />
     </task>
     <servers />
   </component>

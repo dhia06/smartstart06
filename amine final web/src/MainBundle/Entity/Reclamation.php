@@ -171,4 +171,5 @@ class Reclamation
     {
         return (string) $this->iduser=getId();
     }
+
 }

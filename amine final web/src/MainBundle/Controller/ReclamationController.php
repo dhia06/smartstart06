@@ -17,14 +17,23 @@ class ReclamationController extends Controller
      * Lists all reclamation entities.
      *
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
 
         $reclamations = $em->getRepository('MainBundle:Reclamation')->findAll();
 
+        $paginator = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $reclamations, /* query NOT result */
+            $request->query->getInt('page', 2), /*page number*/
+            3 /*limit per page*/
+        );
+
+
         return $this->render('reclamation/index.html.twig', array(
             'reclamations' => $reclamations,
+            'pagination' => $pagination
         ));
     }
 

@@ -8,6 +8,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\FormTypeInterface;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 class FeedbackType extends AbstractType
 {
     /**
@@ -15,7 +16,11 @@ class FeedbackType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('objet7')->add('contenu7',TextareaType::class)->add('mail7')->add('iduser7');
+        $builder->add('objet7')
+            ->add('contenu7', CKEditorType::class, array(
+                'config' => array(
+                    'uiColor' => '#ffffff')))
+            ->add('mail7')->add('iduser7');
     }/**
      * {@inheritdoc}
      */

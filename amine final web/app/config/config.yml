@@ -37,6 +37,8 @@ framework:
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+    form_themes:
+        - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
 
 # Doctrine Configuration
 doctrine:
@@ -86,3 +88,8 @@ fos_user:
 #        profile:
 #            form:
 #                type: AppBundleFormProfileType
+knp_paginator:
+    default_options:
+        page_name: page                 # page query parameter name
+    template:
+        pagination: '@KnpPaginator/Pagination/twitter_bootstrap_v3_pagination.html.twig'     # sliding pagination controls template

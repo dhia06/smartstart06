@@ -11,26 +11,24 @@
             <button class="btn btn-info"><a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a></button>
         {% endif %}
     </div>
-    <h1>Feedback creation</h1>
+    <h1>Feedback réponse</h1>
 
-    {{ form_start(form) }}
-    <table>
-        <tr>
-            <td>Objet:</td><td>{{ form_widget(form.objet7) }}</td><td> {{ form_errors(form.objet7) }} </td>
-        </tr>
-        <tr>
-            <td>Contenu:</td><td>{{ form_widget(form.contenu7) }}</td>
-        </tr>
-        <tr>
-            <td>Mail:</td><td>{{ form_widget(form.mail7) }}</td><td> {{ form_errors(form.mail7) }} </td>
-        </tr>
-        <tr>
-            <td>Iduser:</td><td>{{ form_widget(form.iduser7) }}</td>
-        </tr>
+    <form>
+        <div class="form-group">
+            <label>Objet</label>
+            <input type="text" class="form-control"  placeholder="Objet">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Description</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1"> Addresse email</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+        <button type="submit" class="btn btn-primary">Envoyer</button>
+    </form>
 
-    </table>
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
 
     <ul>
         <li>
