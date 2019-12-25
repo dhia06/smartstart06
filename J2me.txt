@@ -1,0 +1,71 @@
+
+Une MIDlet est une classe abstraite qui est dérivée pour servir de base aux applications du profil MIDP. Cette classe définit une interface entre l'application et 
+la gestion de l'application sur l'appareil par 3 méthodes abstraites :
+startApp() ;
+pauseApp() ;
+destroyApp(boolean unconditional).
+
+*********************
+Q1 : Pourquoi avez vous utilisé le langague XML ?
+R1 : étant donnée qu'il y a une communication entre deux langages diffrents ( PHP et JAVA), Nous avons utilisé un langage standard et intermédiaire
+     pour éffectuer une communication entre eux 
+*********************
+Q2 : Qu'est ce qu'un handler ?
+R2 : Un handler est une classe qui hérite du defaultHandler, elle a plusieurs méthodes abstraites dont on cite characters, startelement et endelement. C'est la classe
+     qui nous a permit de parcourir nos différents fichiers XML dans le but de récupérer les données qui y sont stockées.
+*********************
+Q3 : Pourquoi on n'instancie pas le display de cette sorte : Display disp = new Display(); ?
+R3 : Etant donné que Display suit le design pattern singleton ( ce patron de conception nous autorise à créer qu'une seule instance de la classe), nous avons donc
+     eu recours à la méthode getDisplay() qui nous permet de vérifier s'il s'agit de la toute première instance ou pas.
+*********************
+Q4 : Ennoncez et expliquez les différentes méthodes abstraites du handler ?
+R4 : startElement, endElement, characters. StartElement est une méthode nous permettant de detecter l'ouverture d'une balise ouvrante. On récupére son nom avec
+     l'attribut qname passé en paramètre. EndElement, aussi comme son nom l'indique, elle detecte la fermeture d'une balise. Characters nous permet
+     de récupérer les données écrites dans une balise (entre la balise ouvrante et fermante).
+*********************
+Q5 : what is JME ?
+R5 : JAVA MICRO EDITION ( on nous l'a toujours posé)
+*********************
+Q6 : Quelle est la différence entre la récupération des données avec characters et attributes ?
+R6 : pour la méthode characters, les données affichées dans le fichier XML sont comme suit : 
+     <personne>
+        <nom>MonNom</nom>
+        <prenom>MonPrenom</prenom>
+     </personne>
+
+     Par contre, pour celle des attributs, la structure du fichier est comme suit :
+     <personne nom="MonNom" prenom="MonPrenom" />
+*********************
+Q7 : Pourquoi l'utilisation du langage PHP
+R7 : Vu la indisponibilité d'une méthode nous permettant de se connecter à une base de données avec JME, nous avons eu recours à un langage externe qui est dans
+     notre cas PHP
+*********************
+
+Q8 : shnéya el runnable 
+R8 : c'est une INTERFACE  elli fiha comme fonction prédéfinie el thread 
+*********************
+Q9 :qu'est ce qu'un thread ?
+R9 :on fait ca te permet de lancer plusieurs processus au meme temps ( fel background ) .
+mak ki t'implémenti l'interface runnable tjik el fonction run hédhika. hédhika n7otou fiha 
+les processus el kol( affichage , ajout, modif, suppression )  wel thread y5alik tlancihom el kol au meme temps en background
+*********************
+Q10 : shnowa ysir ken mané5dmoush bel thread?
+R10 : ken famma un processus mayé5demsh mel les processus elli fel run . elli yé5dmou yo93dou yetlancéw quand meme , par contre blesh thread ki yebda fihom wé7éd non fonctionnel, el kol mayé5dmoush
+au cas ou les processus el kol fonctionnels , el far9 bin classs bel thread w classe blesh , c'est que elli bel thread rapide mafamesh délais d'attente
+*********************
+Q11 : data input stream ?
+R11 :  traja3lek un code binaire
+té5édh ton code w trodou binare , w le code binaire hédhéka , y3aber 3la code ascci
+********************* 
+Q12 : el handler ?
+R12 : el handler il te permet de traduire ton le fichier xml bsh tnajem ta9rah en java
+*********************
+Q13 : mnesh composé un handle,
+R13 : de 3 fonctions ( start elements , end elements , w caracters )
+*********************
+Q14 : shnéya el display ?
+R14 : c'est une variable, qui représente ton écran
+*********************
+Q15 : shnouma anwé3 les fichiers XML ?
+R15 :ya caracteres ya attributes .
+
