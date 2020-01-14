@@ -1,0 +1,57 @@
+<?php
+
+namespace MainBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Feedback
+ *
+ * @ORM\Table(name="feedback", indexes={@ORM\Index(name="iduser7", columns={"iduser7"})})
+ * @ORM\Entity
+ */
+class Feedback
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id7", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id7;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="objet7", type="string", length=50, nullable=false)
+     */
+    private $objet7;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="contenu7", type="string", length=50, nullable=false)
+     */
+    private $contenu7;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mail7", type="string", length=50, nullable=false)
+     */
+    private $mail7;
+
+    /**
+     * @var \FosUser
+     *
+     * @ORM\ManyToOne(targetEntity="FosUser")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="iduser7", referencedColumnName="id")
+     * })
+     */
+    private $iduser7;
+
+
+}
+

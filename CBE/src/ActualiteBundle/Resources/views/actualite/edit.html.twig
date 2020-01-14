@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+    <div class="modal-header">
+        <h1 style="color: #003147"><b><i><center>Modifier une Actualite</center></i></b></h1>
+    </div>
+
+
+    <div class="modal-body">
+        <div class="row">
+    {{ form_start(form_modif) }}
+            {{ form_label(form_modif.titre, 'Titre : ',{'attr': {'class': 'control-label'}})  }}
+            {{ form_widget(form_modif.titre) }}
+        </div>
+
+        <div class="row">
+            <div class="form-group col-xs-3">
+             {{ form_label(form_modif.date, 'Date : ',{'attr': {'class': 'control-label'}}) }}
+                <div class="input-group date">
+                    <div class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </div>
+            {{ form_widget(form_modif.date, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="form-group col-xs-5">
+
+                {{ form_label(form_modif.description, 'Description : ',{'attr': {'class': 'control-label'}})  }}
+                {{ form_widget(form_modif.description,  {'attr': {'class': 'form-control'}}) }}
+
+            </div>
+
+            <div class="row">
+                <div class="form-group col-xs-5">
+                            {{ form_label(form_modif.file, 'Image : ',{'attr': {'class': 'control-label'}})  }}
+                            {{ form_widget(form_modif.file,  {'attr': {'class': 'form-control'}}) }}
+                </div>
+
+            </div>
+
+        <div class="modal-footer">
+        <a href="{{ path('actualite_affiche',{id:id_cat}) }}" class="btn btn-success" data-dismiss="modal">Annuler</a>
+
+            {{ form_widget(form_modif.Ajouter,{'label': 'Ajouter', 'attr': {'class': 'btn btn-success btn-rounded'} }) }}
+    </div>
+
+
+   {{ form_end(form_modif) }}
+
+
+    </div>
+    </div>
+{% endblock %}

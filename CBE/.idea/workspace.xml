@@ -28,6 +28,9 @@
     <expand />
     <select />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="CBE" />
+  </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
       <command text="s doctrine:generate:form SAVBundleCommande" />
@@ -112,19 +115,28 @@
       <path value="$PROJECT_DIR$/vendor/willdurand/negotiation" />
       <path value="$PROJECT_DIR$/vendor/friendsofsymfony/rest-bundle" />
       <path value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle" />
+      <path value="$PROJECT_DIR$/vendor/twig/extensions" />
+      <path value="$PROJECT_DIR$/vendor/pagerfanta/pagerfanta" />
+      <path value="$PROJECT_DIR$/vendor/javiereguiluz/easyadmin-bundle" />
+      <path value="$PROJECT_DIR$/vendor/nomaya/social-bundle" />
+      <path value="$PROJECT_DIR$/vendor/cmen/google-charts-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1TtXTZrXsFgU3fUBAnURo56wRXp" />
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="AvisAdmin&#9;FILE&#9;file://C:/xampp/htdocs/www/CBE/src/SAVBundle/Resources/config/doctrine/AvisAdmin.orm.yml" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sprintweb" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
+    <property name="settings.editor.splitter.proportion" value="0.24404761" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\CBE\src\ActualiteBundle\Resources\views" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\www\CBE\src\SAVBundle\Resources\views\Cahier" />
       <recent name="C:\xampp\htdocs\www\CBE\src\SAVBundle\Resources\views\Avis" />
@@ -135,13 +147,48 @@
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
-      <command value="s generate:bundle" />
-      <command value="s doctrine:generate:crud" />
       <command value="s doctrine:schema:update --complete" />
       <command value="s doctrine:schema:update --help" />
       <command value="s doctrine:schema:update --dump-sql" />
       <command value="s doctrine:mapping:import --force MainBundle annotation" />
+      <command value="s generate:bundle" />
+      <command value="s doctrine:generate:crud " />
+      <command value="s doctrine:generate:crud" />
+      <command value="s fos:user:promote abir" />
+      <command value="composer require javiereguiluz/easyadmin-bundle" />
+      <command value="c composer require javiereguiluz/easyadmin-bundle" />
+      <command value="c require javiereguiluz/easyadmin-bundle" />
+      <command value="s assets:install --symlink" />
+      <command value="s doctrine:generate:entities" />
+      <command value="s doctrine:generate:entities Actualite" />
+      <command value="s doctrine:mapping:import --force ActualiteBundle annotation" />
+      <command value="s doctrine:generate:entities ActualiteBundle:Actualite" />
+      <command value="s doctrine:cache:clear-metadata" />
+      <command value="s doctrine:generate:entity " />
+      <command value="c require cmen/google-charts-bundle " />
+      <command value="c require alexndreazevedo/egoi-api-php:dev/master" />
+      <command value="c require sngrl/php-firebase-cloud-messaging:dev-master" />
+      <command value="c require nomaya/social-bundle" />
+      <command value="c require nomaya/social-bundle --dev" />
+      <command value="c require nomaya/social-bundle @dev" />
+      <command value="c require nomaya/social-bundle: &quot;dev-master&quot;" />
+      <command value="c require nomaya/social-bundle: dev-master" />
+      <command value="c require nomaya/social-bundle &quot;dev-master&quot; " />
+      <command value="c require nomaya/social-bundle &quot;dev&quot; app" />
+      <command value="composer.phar update" />
+      <command value="c update" />
+      <command value="require nomaya/social-bundle 1.0.x-dev" />
+      <command value="require nomaya/social-bundle -dev" />
+      <command value=" nomaya/social-bundle dev-master" />
+      <command value="c self-update" />
+      <command value="c install" />
+      <command value="c require nomaya/social-bundle " />
+      <command value="c update nomaya/social-bundle" />
+      <command value="s templating" />
+      <command value="s install templating" />
       <command value="s doctrine:schema:update --force " />
+      <command value="c require cmen/google-charts-bundle" />
+      <command value="c require mkebza/google-maps-bundle" />
     </option>
   </component>
   <component name="RunDashboard">
@@ -172,6 +219,21 @@
       <workItem from="1574280375900" duration="15090000" />
       <workItem from="1574675305876" duration="2474000" />
       <workItem from="1574678440638" duration="3386000" />
+      <workItem from="1574720678279" duration="44252000" />
+      <workItem from="1574849428317" duration="37815000" />
+      <workItem from="1574934658914" duration="2544000" />
+      <workItem from="1574942607259" duration="1361000" />
+      <workItem from="1574978408155" duration="13169000" />
+      <workItem from="1575022944180" duration="5723000" />
+      <workItem from="1575191080736" duration="2020000" />
+      <workItem from="1575204324117" duration="1640000" />
+      <workItem from="1575213053051" duration="23868000" />
+      <workItem from="1575287397820" duration="15630000" />
+      <workItem from="1575318402953" duration="15241000" />
+      <workItem from="1575385495277" duration="355000" />
+      <workItem from="1575386024098" duration="1589000" />
+      <workItem from="1575396397564" duration="27173000" />
+      <workItem from="1575451970989" duration="15128000" />
     </task>
     <servers />
   </component>

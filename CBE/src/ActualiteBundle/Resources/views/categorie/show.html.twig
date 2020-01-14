@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 style="color: #9c3328"><b><i><center>LA LISTE DES CATEGORIE</center></i></b></h1>
+
+<table class="table table-bordered table-striped" cellspacing="0"  border="2">
+    <thead>
+    <tr>
+
+        <th>LIBELLE</th>
+
+        <th>DESCRIPTION</th>
+
+
+    </tr>
+    <link rel="stylesheet" href="{{ asset('css/table.css') }}">
+    </thead>
+    <tbody>
+     {% for c in categorie %}
+        <tr>
+
+            <td>{{c.libelle}}</td>
+            <td style="">{{ c.description }}</td>
+
+            <td><button type="button" ><a href="{{ path('categorie_modifier',{id : c.id}) }}" style="color: #003147">Modifier</a></button></td>
+            <td><button type="button" ><a href="{{ path('categorie_supprimer',{id : c.id})  }}" onclick="return confirm('Etes vous sur de supprimer cette catégorie?')" style="color: #0a0a0a">Supprimer</a></button></td>
+
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<ul>
+    <li>
+        <b><i> <a href="{{ path('categorie_ajout') }}">AJOUTER UNE Categorie <img src="{{ asset('images/ajout.png') }}"></a></i></b>
+    </li>
+</ul>
+{% endblock %}

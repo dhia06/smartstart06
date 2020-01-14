@@ -2,13 +2,14 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
-    - { resource: "@MainBundle/Resources/config/services.yml" }
+    - { resource: "@ActualiteBundle/Resources/config/services.yml" }
 
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
+    brochures_directory: '%kernel.project_dir%/web/images'
 
 framework:
     #esi: ~
@@ -32,6 +33,9 @@ framework:
     assets: ~
     php_errors:
         log: true
+
+    templating:
+        engines: ['twig', 'php']
 
 # Twig Configuration
 twig:
@@ -86,3 +90,41 @@ fos_user:
 #        profile:
 #            form:
 #                type: AppBundleFormProfileType
+
+easy_admin:
+    entities:
+        - ActualiteBundle\Entity\Actualite
+        - ActualiteBundle\Entity\Categorie
+
+
+nomaya_social:
+    buttons:
+        facebook:
+            url:            null
+            locale:         "fr_FR"
+            send:           false
+            width:          300
+            showFaces:      false
+            layout:         "button_count"
+        twitter:
+            url:            null
+            locale:         "fr"
+            message:        "Je veux partager ça avec vous"
+            text:           "Tweet"
+            via:            "L'Equipe cartedevisitevirtuelle.fr"
+            tag:            "ttot"
+        google_plus:
+            url:            null
+            locale :        "fr"
+            size :          "medium"
+            annotation :    "bubble"
+            width :         300
+        linkedin:
+            url:            null
+            locale:         "fr_FR"
+            counter:        "right"
+
+cmen_google_charts:
+    version: "current"
+
+
