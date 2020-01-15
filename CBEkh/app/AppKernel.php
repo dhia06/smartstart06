@@ -21,6 +21,13 @@ class AppKernel extends Kernel
             new LastBundle\LastBundle(),
             new Toiba\FullCalendarBundle\FullCalendarBundle(),
             new Nomaya\SocialBundle\NomayaSocialBundle(),
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+            new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
+            new ActualiteBundle\ActualiteBundle(),
+            new CMEN\GoogleChartsBundle\CMENGoogleChartsBundle(),
+            new MainBundle\MainBundle(),
+            new ProjetBundle\ProjetBundle(),
+            new FormationBundle\FormationBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

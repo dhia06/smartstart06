@@ -221,7 +221,13 @@
 #}
                             </p>
                         <!-- Status -->
-                        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                        <a href="#"><i class="fa fa-circle text-success"></i>
+                        {% if not is_granted('IS_AUYHENTICATED_REMEMBERED') %}
+                            vous etes pas connecté
+                            {% else %}
+                            {{ app.user.username }}  :  {{ app.user.id }}
+                            {% endif %}
+                        </a>
                     </div>
                 {% endblock %}
             </div>
@@ -235,18 +241,20 @@
 
                     <li><a href="#"><i class="fa fa-link"></i> <span>Index</span></a></li>
                     <li class="treeview">
-                        <a href="#"><i class="fa fa-link"></i> <span>Actualité </span>
+                        <a href="#"><i class="fa fa-link"></i> <span>ACTUALITE </span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="#">Link in level 2</a></li>
-                            <li><a href="#">Link in level 2</a></li>
+                            <li><a href="{{ path ('actualite_front') }}" >ACCUEIL</a></li>
+                            <li><a href="{{ path ('actualite_affiche') }}" >GERER LES ACTUALITES</a></li>
+                            <li><a href="{{ path ('categorie_affiche') }}" >GERER LES CATEGORIES</a></li>
+                            <li><a href="{{ path ('chart') }}" >STATISTIQUES</a></li>
                         </ul>
                     </li>
                     <li class="treeview">
-                        <a href="#"><i class="fa fa-link"></i> <span>Offre</span>
+                        <a href="#"><i class="fa fa-link"></i> <span>OFFRES</span>
                             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
@@ -256,37 +264,27 @@
                             <li><a href="#">Link in level 2</a></li>
                         </ul>
                     </li>
+
                     <li class="treeview">
-                        <a href="#"><i class="fa fa-link"></i> <span>Croudfunding </span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href="#">Link in level 2</a></li>
-                            <li><a href="#">Link in level 2</a></li>
-                        </ul>
-                    </li>
-                    <li class="treeview">
-                        <a href="#"><i class="fa fa-link"></i> <span>Formation</span>
+                        <a href="#"><i class="fa fa-link"></i> <span>FORMATION</span>
                             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="#">Link in level 2</a></li>
-                            <li><a href="#">Link in level 2</a></li>
+                            <li><a href="{{ path ('formation_ajoutformation') }}" >AJOUTER FORMATION</a></li>
+                            <li><a href="{{ path ('avis_show') }}" >CONSULTER LES AVIS</a></li>
                         </ul>
                     </li>
                     <li class="treeview">
-                        <a href="#"><i class="fa fa-link"></i> <span>Evenement </span>
+                        <a href="#"><i class="fa fa-link"></i> <span>EVENEMENTS </span>
                             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
                         </a>
                         <ul class="treeview-menu">
                             <li><a href="{{ path('categorie_index') }}">categorie</a></li>
-                            <li><a href="{{ path('evenement_index') }}">Event</a></li>
+                            <li><a href="{{ path('evenement_index') }}">Evenement</a></li>
 
                         </ul>
                     </li>
@@ -297,8 +295,19 @@
               </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="#">Link in level 2</a></li>
-                            <li><a href="#">Link in level 2</a></li>
+                            <li><a href="{{ path('reclamation_index') }}">Afficher les réclamations</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#"><i class="fa fa-link"></i> <span>Feedback </span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="{{ path('feedback_index') }}">Afficher feedbacks</a></li>
+
                         </ul>
                     </li>
                 {% endblock %}

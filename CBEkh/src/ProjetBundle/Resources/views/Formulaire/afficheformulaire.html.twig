@@ -1,0 +1,33 @@
+{% extends 'base1.html.twig' %}
+{% block body %}
+    <center>
+        <h2> Forms</h2>
+        <table border="1">
+            <td>  Name </td>
+            <td>  LastName </td>
+            <td> Phone Number</td>
+            <td>  Mail </td>
+            <td> Project Name </td>
+            <td> Price Of Donation </td>
+
+            <td>   </td>
+            <td>    </td>
+            {% for f in formulaires %}
+                <tr>
+                    <td> {{ f.nom }} </td>
+                    <td> {{ f.prenom }} </td>
+                    <td> {{ f.tel }} </td>
+                    <td> {{ f.mail }} </td>
+                    <td> {{ f.nomduprojet }} </td>
+                    <td> {{ f.montantform }} </td>
+
+
+                        <td> <a href="{{ path('projet_deleteformulaire',{'id':f.idfor}) }}"> <button> Supprimer</button></a></td>
+
+                </tr>
+            {% endfor %}
+        </table>
+    </center>
+
+
+{% endblock %}

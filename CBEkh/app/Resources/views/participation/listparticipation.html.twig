@@ -1,0 +1,32 @@
+{% extends 'base1.html.twig' %}
+
+{% block body %}
+
+
+
+    <table class="table table-bordered table-striped" cellspacing="0" id="tableac" border="2">
+        <tr>
+            <th>Nom Evenement</th>
+            <th>Date</th>
+
+        </tr>
+
+
+        {% for q in query %}
+            <tr>
+                <td>
+      {{ q.event.titre}}
+
+                </td>
+                <td>
+                    {% if q.event.dateEvent %}{{ q.event.dateEvent|date('Y-m-d') }}{% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <ul class="social-links">
+        <li>{{ socialButtons( { 'facebook': {'locale':'fr_FR', 'send':true}} ) }}</li>
+    </ul>
+
+{% endblock %}

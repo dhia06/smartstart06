@@ -123,12 +123,15 @@ class ParticipationController extends Controller
         ;
     }*/
     public function ajoutresAction( $idEvent)
-    {
+    { $participation= new Participation();
         $em = $this->getDoctrine()->getManager();
         $event=$em->getRepository('LastBundle:Evenement')->find($idEvent);
         if( $event->getNbplace()> 0) {
             $event->setNbplace($event->getNbplace() - 1);
-            $em->persist($event);
+            $participation->setId($this->getUser());
+            $participation->setEvent($event);
+            //$em->persist($event);
+            $em->persist($participation);
             $em->flush();
             return $this->redirectToRoute('evenement_show', array('id' => $event->getId()));
         }
@@ -138,6 +141,34 @@ else
             return $this->render('participation/msg.html.twig');
 }
 
+    }
+    public function annulerAction( $idEvent)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $event=$em->getRepository('LastBundle:Evenement')->find($idEvent);
+
+            $event->setNbplace($event->getNbplace()+ 1);
+        $participation=$em->getRepository('LastBundle:Participation')->findOneBy(array('id'=>$this->getUser()));
+
+            $em->remove($participation);
+
+            $em->flush();
+            return $this->redirectToRoute('evenement_show', array('id' => $event->getId()));
+
+
+
+    }
+    public function myEventsAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $user=$this->container->get('security.token_storage')->getToken()->getUser();
+        $query=$em->createQuery('Select i from LastBundle:Participation i where i.id=:user ')->setParameter('user', $user);
+        $inscriptions=$query->getResult();
+
+
+        return $this->render('participation/listparticipation.html.twig', array(
+            'query' => $inscriptions,
+        ));
     }
 
 }

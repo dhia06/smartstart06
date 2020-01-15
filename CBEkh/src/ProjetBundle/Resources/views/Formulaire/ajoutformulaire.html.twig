@@ -1,0 +1,41 @@
+{% extends 'base1.html.twig' %}
+{% block body %}
+    <center>
+        {% if(test=="ajout") %}
+        <h1> Add Form</h1>
+        {% else %}
+        <h1> Modify Form</h1>
+        {% endif %}
+
+    </center>
+    <center>
+        {{ form_start(form) }}
+
+        <table>
+            <tr>
+                <td> Phone Number:</td> <td> {{ form_widget(form.tel) }}</td>
+            </tr>
+
+            <tr>
+                <td> Price Of Donation:</td> <td> {{ form_widget(form.montantform) }}</td>
+            </tr>
+
+            <tr>
+                <td> </td>
+                <td>
+    {% if (test=="ajout") %}
+
+                    <input type="submit" value="Ajouter"></td>
+                    {% else %}
+                        <input type="submit" value="Modifier">
+
+                {% endif %}
+
+            </tr>
+        </table>
+    </center>
+
+    {{ form_end(form) }}
+
+
+{% endblock %}

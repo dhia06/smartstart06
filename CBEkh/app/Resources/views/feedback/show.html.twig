@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div>
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+            <button type="button" class="btn btn-danger"><a href="{{ path('fos_user_security_logout') }}">
+                {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                </a></button>
+        {% else %}
+            <button class="btn btn-info"><a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a></button>
+        {% endif %}
+    </div>
+    <h1 style="color: #9F0053">Feedback</h1>
+
+    <table border="1">
+        <tbody>
+            <tr>
+                <th>Id7</th>
+                <td>{{ feedback.id7 }}</td>
+            </tr>
+            <tr>
+                <th>Objet7</th>
+                <td>{{ feedback.objet7 }}</td>
+            </tr>
+            <tr>
+                <th>Contenu7</th>
+                <td>{{ feedback.contenu7 }}</td>
+            </tr>
+            <tr>
+                <th>Mail7</th>
+                <td>{{ feedback.mail7 }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+        {% if is_granted('ROLE_ADMIN') %}
+            <li>
+                <button class="btn btn-warning"><a href="{{ path('feedback_reponse') }}">Répondre</a></button>
+            </li>
+        {% endif %}
+
+
+            <button class="btn btn-warning"><a href="{{ path('feedback_index') }}">Back to the list</a></button>
+
+            <button class="btn btn-success"><a href="{{ path('feedback_edit', { 'id7': feedback.id7 }) }}">Edit</a></button>
+
+
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+
+
+{% endblock %}

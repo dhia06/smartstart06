@@ -26,3 +26,9 @@ participation_delete:
 ajoutreservation:
     path:     /ajoutre/{idEvent}
     defaults: { _controller: "LastBundle:Participation:ajoutres" }
+anullereservation:
+    path:     /anulle/{idEvent}
+    defaults: { _controller: "LastBundle:Participation:annuler" }
+userevent:
+    path:     /userevent
+    defaults: { _controller: "LastBundle:Participation:myEvents" }

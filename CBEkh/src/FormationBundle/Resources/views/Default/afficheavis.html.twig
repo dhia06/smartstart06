@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="card card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg);">
+
+        <!-- Content -->
+        <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+            <div>
+
+               <center><table border="3px solid black" >
+
+                        <td bgcolor="#a52a2a" style="color: white">  Titre </td>
+                        <td bgcolor="#a52a2a" style="color: white"> Description </td>
+
+
+                        <td>   </td>
+                        <td>    </td>
+                        {% for f in formation %}
+                            <tr>
+
+                                <td bgcolor="silver" style="color: #0b0b0b" > {{ f.titre }} </td>
+                                <td bgcolor="silver" style="color: #0b0b0b"> {{ f.description }} </td>
+
+
+                                <td> <a href="{{ path('avis_delete',{'id':f.id}) }}"> <button style="background-color: darkred" > Supprimer</button></a></td>
+                                <td> <a href="{{ path('avis_update',{'id':f.id}) }}"> <button   style="background-color: darkred"> Modifier</button></a></td>
+
+
+
+                            </tr>
+                        {% endfor %}
+
+                    </table></center>
+
+
+            </div>
+        </div>
+        <!-- Content -->
+    </div>
+
+{% endblock %}

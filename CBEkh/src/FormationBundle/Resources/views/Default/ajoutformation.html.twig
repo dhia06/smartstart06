@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="card card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg);">
+
+        <!-- Content -->
+        <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+            <div>
+            </div>
+
+
+            <center>
+                {% if(test=="ajout") %}
+                    <h1 style="color: #9e0505" >Add Formation</h1>
+                {% else %}
+                    <h1 style="color: #9f191f"> Modify Formation</h1>
+                {% endif %} </center>
+
+
+            <center>
+                {{ form_start(form) }}
+
+                <table>
+                    <tr>
+                        <td style="color: #0000cc"> Formation Name:</td> <td> {{ form_widget(form.nom) }}</td>
+                    </tr>
+                    <tr>
+                        <td style="color:#0000cc"> Place:</td> <td> {{ form_widget(form.lieu) }}</td>
+                    </tr>
+                    <tr>
+                        <td style="color: #0000cc" > Price:</td> <td> {{ form_widget(form.prix) }}</td>
+                        {% if((form_errors(form.prix)==true)) %}
+                            <div class="alert alert-success" role="alert">
+                                The Price should be between 20 and 1000 dt !!!!                    </div>
+                        {% endif %}
+                    </tr>
+                    <tr>
+                        <td style="color: #0000cc"> Date:</td> <td> {{ form_widget(form.date) }}</td>
+                        {% if((form_errors(form.date)==true)) %}
+                            <div class="alert alert-success" role="alert">
+                                The Date should be greater than today!!!!                    </div>
+                        {% endif %}
+                    </tr>
+                    <tr>
+                        <td style="color: #0000cc"> Description:</td> <td> {{ form_widget(form.description) }}</td>
+                    </tr>
+                    <tr>
+                        <td style="color: #0000cc"> Photo:</td> <td> {{ form_row(form.image) }}</td>
+                    </tr>
+                    <tr>
+                        <td style="color: #0000cc" > Place number:</td> <td> {{ form_widget(form.nbrPlaces) }}</td>
+                        {% if((form_errors(form.nbrPlaces)==true)) %}
+                            <div class="alert alert-success" role="alert">
+                                The places should be between 20 and 50!!!!!                    </div>
+                        {% endif %}
+                    </tr>
+
+                    <tr>
+
+                        <td> </td>
+                        <td>
+                            {% if (test=="ajout") %}
+
+                            <input  style="background-color: darkred"  type="submit" value="Ajouter"></td>
+                        {% else %}
+                            <input  style="background-color: darkred" type="submit" value="Modifier">
+
+                        {% endif %}
+
+                    </tr>
+                </table>
+            </center>
+
+            {{ form_end(form) }}
+
+
+
+            </div>
+        </div>
+        <!-- Content -->
+
+{% endblock %}

@@ -1,9 +1,31 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Categories list</h1>
+<div class="agileinfo-grap">
+    <div class="agileits-box">
+        <header class="agileits-box-header clearfix">
+        </header>
+        <div align="center">
+            <div class="w3-search-box">
+                <form action="#" method="post">
 
-    <table>
+                </form>
+            </div>
+        </div>
+
+        <div align="center">
+            <div class="card">
+
+                <div class="card-header">
+                    <h3 class="card-title" style="color: #9f191f"><b><i>liste des categories</i></b></h3>
+                    <script src="{{ asset('js2/jquery.min.js') }}"></script>
+                    <input type="text" id="search" placeholder="CHERCHER categorie ...">
+
+
+                </div>
+
+
+    <table id="tablecat"class="table table-bordered table-striped" cellpadding="0" border="2">
         <thead>
             <tr>
                 <th>Id</th>
@@ -20,12 +42,12 @@
                 <td>{{ categorie.description }}</td>
                 <td>
                     <ul>
-                        <li>
-                            <a href="{{ path('categorie_show', { 'id': categorie.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('categorie_edit', { 'id': categorie.id }) }}">edit</a>
-                        </li>
+                        <button  class="btn btn-danger">
+                            <a href="{{ path('categorie_show', { 'id': categorie.id }) }}"style="color: #0c0c0c">afficher</a>
+                        </button>
+                        <button class="btn btn-danger">
+                            <a href="{{ path('categorie_edit', { 'id': categorie.id }) }}"style="color: #0c0c0c">Modifier</a>
+                        </button>
                     </ul>
                 </td>
             </tr>
@@ -34,8 +56,37 @@
     </table>
 
     <ul>
-        <li>
-            <a href="{{ path('categorie_new') }}">Create a new categorie</a>
-        </li>
+        <button class="btn btn-danger">
+            <a href="{{ path('categorie_new') }}"style="color: #0c0c0c">Creer une categorie</a>
+        </button>
     </ul>
-{% endblock %}
+                <script>
+                    $(document).ready(function(){
+                        $('#search').keyup(function(){
+                            search_table($(this).val());
+                        });
+                        function search_table(value){
+                            $('#tablecat tbody tr').each(function(){
+                                var found = 'false';
+                                $(this).each(function(){
+                                    if($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0)
+                                    {
+                                        found = 'true';
+                                    }
+                                });
+                                if(found == 'true')
+                                {
+                                    $(this).show();
+
+                                }
+                                else
+                                {
+                                    $(this).hide();
+
+                                }
+                            });
+                        }
+                    });
+                </script>
+
+                {% endblock %}

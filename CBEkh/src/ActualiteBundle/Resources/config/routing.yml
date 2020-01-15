@@ -1,0 +1,59 @@
+actualite_homepage:
+    path:     /a
+    defaults: { _controller: ActualiteBundle:Default:index }
+
+
+actualite_ajout:
+    path:     /newactualite
+    defaults: { _controller: ActualiteBundle:Actualite:new }
+
+actualite_user:
+    path:     /user
+    defaults: { _controller: ActualiteBundle:Actualite:user }
+
+actualite_affiche:
+    path:     /show
+    defaults: { _controller: ActualiteBundle:Actualite:show }
+
+actualite_modifier:
+    path:     /edit/{id}
+    defaults: { _controller: ActualiteBundle:Actualite:edit }
+
+actualite_supprimer:
+    path:     /delete/{id}
+    defaults: { _controller: ActualiteBundle:Actualite:delete }
+
+actualite_traiter:
+    path:     /traiter/{id}
+    defaults: { _controller: ActualiteBundle:Actualite:traiter }
+
+#siteofficiel:
+#    path:     /siteofficiel/{id}
+#    defaults: { _controller: ActualiteBundle:Actualite:nb_click }
+
+categorie_ajout:
+    path:     /newcat
+    defaults: { _controller: ActualiteBundle:Categorie:new }
+
+categorie_affiche:
+    path:     /showcat
+    defaults: { _controller: ActualiteBundle:Categorie:show }
+
+categorie_modifier:
+    path:     /editcat/{id}
+    defaults: { _controller: ActualiteBundle:Categorie:edit }
+
+categorie_supprimer:
+    path:     /deletecat/{id}
+    defaults: { _controller: ActualiteBundle:Categorie:delete }
+
+actualite_front:
+    path:     /actualite
+    defaults: { _controller: ActualiteBundle:Actualite:listerActualiteFront }
+actualite_click:
+    path:     /nbclick/{id}
+    defaults: { _controller: ActualiteBundle:Actualite:nb_click }
+
+chart:
+    path:    /chart
+    defaults: { _controller: ActualiteBundle:Actualite:chart }

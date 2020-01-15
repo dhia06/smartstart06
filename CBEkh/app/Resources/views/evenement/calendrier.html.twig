@@ -1,4 +1,3 @@
-{% extends 'base.html.twig' %}
 
 {% block body %}
     <br><br><br><br><br><br><br><br>
@@ -16,6 +15,13 @@
         function afficherMsg()
         {
             alert("rservation avec succés");
+        }
+    </script>
+    <script>
+
+        function afficherMsgg()
+        {
+            alert("rservation anulleé");
         }
     </script>
 
@@ -85,13 +91,14 @@
                                 <div class="entry-content" align="left" >
 
                                     <a>
-                                        <img src="{{ asset ( e.nomImage ) }} "  style="width: 80px; height:80px"  >
+                                        <a href="#"><img src="{{ asset ( 'images/'~ e.nomImage ) }} " width="150" height="150" /></a>
 
 
                                     </a>
                                 </div>
-                                <div class="caption">
+                                <div class="sec-title-two text-center">
                                     <h4>{{ e.titre}}</h4>
+                                </div>
                                     <p>{{ e.description }}</p>
                                     <p>{{ e.lieu }}</p>
                                     <div class="matrlf-mid">
@@ -112,10 +119,12 @@
                                         <a></a><i class="fab fa-google-plus-square"> </i>Google +</i></a>
                                         <a></a> <i class="fab fa-twitter"></i> </i>Instagram</i></a>
 
-                                        <center><a   onclick="afficherMsg()" href="{{ path('ajoutreservation',{'idEvent':e.Id}) }}"> <span class="btn-danger btn-sm chr-cart pchr-cart" type="submit"> Reservaer <i class="fa fa-cart-plus" aria-hidden="true"></i></span></a>
+                                        <center><a   onclick="afficherMsg()" href="{{ path('ajoutreservation',{'idEvent':e.Id}) }}"> <span class="btn-danger btn-sm chr-cart pchr-cart" type="submit"> Reserver <i class="fa fa-cart-plus" aria-hidden="true"></i></span></a>
+                                            <center><a   onclick="afficherMsgg()" href="{{ path('anullereservation',{'idEvent':e.Id}) }}"> <span class="btn-danger btn-sm chr-cart pchr-cart" type="submit"> AnuulerReserver <i class="fa fa-cart-plus" aria-hidden="true"></i></span></a>
 
 
-                                            <a href="#" data-toggle="modal" data-target="#myModal1"></a>
+
+                                                <a href="#" data-toggle="modal" data-target="#myModal1"></a>
                                     </form>
                                 </div>
                             </div>
@@ -198,4 +207,7 @@
             });
         });
     </script>
+    <button type="button" class="btn " size="6 px"><a href="{{ path('userevent')}}" style="color: #9f191f"> Liste des Evenements</a></button></div></div>
+
+
 {% endblock %}

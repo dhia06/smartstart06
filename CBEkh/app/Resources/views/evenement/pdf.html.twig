@@ -1,0 +1,39 @@
+<table class="table table-bordered table-striped" cellspacing="0" id="tableac" border="2">
+    <tbody>
+    <tr>
+        <th>Id</th>
+        <td>{{ evenement.id }}</td>
+    </tr>
+    <tr>
+        <th>Titre</th>
+        <td>{{ evenement.titre }}</td>
+    </tr>
+    <tr>
+        <th>lieu</th>
+        <td>{{ evenement.lieu }}</td>
+    </tr>
+    <tr>
+        <th>nombre de place</th>
+        <td>{{ evenement.nbplace }}</td>
+    </tr>
+    <tr>
+        <th>Image</th>
+        <td style="..."><img src="{{ asset('images/' ~ evenement.nomImage)}}" width="50" height="50"></td>
+
+
+    </tr>
+    <tr>
+        <th>Date</th>
+        <td>{% if evenement.dateEvent %}{{ evenement.dateEvent|date('Y-m-d') }}{% endif %}</td>
+
+    </tr>
+    <tr>
+        <th>Description</th>
+        <td>{{ evenement.description }}</td>
+    </tr>
+    </tbody>
+
+</table>
+
+
+

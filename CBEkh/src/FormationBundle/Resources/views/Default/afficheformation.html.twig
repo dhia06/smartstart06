@@ -1,0 +1,155 @@
+{% extends 'base1.html.twig' %}
+{% block body %}
+
+    <div class="card card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg);">
+
+        <!-- Content -->
+        <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+            <div>
+
+                <center>
+
+                    <h2   style="color: #9f191f" > Formation</h2>
+                    <center><div class=" align-content-lg-end position-absolute align-text-top navbar-toggler-right">
+                            <form id="searchi" class="search_container_form" method="get"></center>
+
+                    <center> <input type="text" class="search_container_input" placeholder="search for event" id="search"
+                                    name="search"
+                                    required="required">
+                        <button class="search_container_button" type="submit"><i class="fa fa-search"
+                                                                                 aria-hidden="true"></i></button></center>
+                    </form>
+            </div>
+
+
+            <br>
+            <center>
+                *.*.*.*.*.*.*.*.*.*.*.
+                <br>
+                <br>
+
+                <div style="color: #0b0b0b" class="events" id="entitiesNav">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <ul>
+
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                *.*.* .*.*.*.*.*.*.*.*.
+            </center>
+
+            <br>
+
+            <center><table border="3px solid black" >
+                    <td   bgcolor="#a52a2a" style="color: white">Formation Name </td>
+                    <td bgcolor="#a52a2a" style="color: white">  Place </td>
+                    <td bgcolor="#a52a2a" style="color: white"> Price</td>
+                    <td bgcolor="#a52a2a" style="color: white">  Date </td>
+                    <td bgcolor="#a52a2a" style="color: white"> Description </td>
+                    <td bgcolor="#a52a2a" style="color: white"> Photo </td>
+                    <td bgcolor="#a52a2a" style="color: white"> Place number </td>
+
+                    <td>   </td>
+                    <td>    </td>
+                    {% for f in formation %}
+                        <tr>
+
+                            <td bgcolor="silver" style="color: #0b0b0b" > {{ f.nom }} </td>
+                            <td bgcolor="silver" style="color: #0b0b0b"> {{ f.lieu }} </td>
+                            <td bgcolor="silver" style="color: #0b0b0b"> {{ f.prix}} </td>
+                            <td bgcolor="silver" style="color: #0b0b0b"> {{ f.date | date ('l, Y-m-d')}} </td>
+                            <td bgcolor="silver" style="color: #0b0b0b"> {{ f.description }} </td>
+                            <td> <img src="{{ asset('/web/images/'~ f.image) }}" height="70px" width="180px" /></td>
+                            <td bgcolor="silver" style="color: #0b0b0b"> {{ f.nbrPlaces }} </td>
+
+                            <td> <a href="{{ path('formation_supprimerformation',{'id':f.id}) }}"> <button style="background-color: darkred" > Supprimer</button></a></td>
+                            <td> <a href="{{ path('formation_updateformation',{'id':f.id}) }}"> <button   style="background-color: darkred"> Modifier</button></a></td>
+                            <td> <a href="{{ path('formation_afficheformation',{'id':f.id}) }}"> <button   style="background-color: darkred"> Participer</button></a></td>
+
+
+
+
+                        </tr>
+                    {% endfor %}
+
+                </table></center>
+            <ul class="social-links">
+                <li>{{ socialButtons( { 'facebook': {'locale':'fr_FR', 'send':true}} ) }}
+
+                </li>
+
+            </ul>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+            <script type="text/javascript">
+                jQuery(document).ready(function () {
+                    var searchRequest = null;
+                    $("#search").keyup(function () {
+                        var minlength = 3;
+                        var that = this;
+                        var value = $(this).val();
+                        var entitySelector = $("#entitiesNav").html('');
+                        if (value.length >= minlength) {
+                            if (searchRequest != null)
+                                searchRequest.abort();
+                            searchRequest = $.ajax({
+                                type: "GET",
+                                url: "{{ path('ajax_search') }}",
+                                data: {
+                                    'q': value
+                                },
+                                dataType: "text",
+                                success: function (msg) {
+                                    //we need to check if the value is the same
+                                    if (value == $(that).val()) {
+                                        var result = JSON.parse(msg);
+                                        $.each(result, function (key, arr) {
+                                            $.each(arr, function (id, value) {
+                                                if (key == 'entities') {
+                                                    if (id != 'error') {
+                                                        entitySelector.append('' +
+                                                            '<div class="events" id="show_event_div">' +
+                                                            '<div class="container">' +
+                                                            '<div class="row">' +
+                                                            '<div class="col">' + '<li>   ' + value[0] + '</li>' +
+                                                            ' </div>' +
+                                                            ' </div>' +
+                                                            ' </div>' +
+                                                            ' </div>' +
+                                                            ' </div>');
+                                                    } else {
+                                                        entitySelector.append('<li class="errorLi">' + value + '</li>');
+                                                    }
+                                                }
+                                            });
+                                        });
+                                    }
+
+                                }
+                            });
+                        }
+                    });
+                });
+            </script>
+            </center>
+
+
+
+
+
+
+            </div>
+        </div>
+        <!-- Content -->
+    </div>
+{% endblock %}
+
+

@@ -1,52 +1,56 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Evenement</h1>
 
-    <table>
+    <h1 style="color: #9f191f"><b><i><center>Les Evenements</center></i></b></h1>
+
+    <table class="table table-bordered table-striped" cellpadding="0" border="2">
+
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ evenement.id }}</td>
-            </tr>
-            <tr>
-                <th>Titre</th>
-                <td>{{ evenement.titre }}</td>
-            </tr>
-            <tr>
-                <th>Lieu</th>
-                <td>{{ evenement.lieu }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ evenement.description }}</td>
-            </tr>
-            <tr>
-                <th>Dateevent</th>
-                <td>{% if evenement.dateEvent %}{{ evenement.dateEvent|date('Y-m-d') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Nbplace</th>
-                <td>{{ evenement.nbplace }}</td>
-            </tr>
-            <tr>
-                <th>Nomimage</th>
-                <td>{{ evenement.nomImage }}</td>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <td>{{ evenement.id }}</td>
+        </tr>
+        <tr>
+            <th>Titre</th>
+            <td>{{ evenement.titre }}</td>
+        </tr>
+        <tr>
+            <th>lieu</th>
+            <td>{{ evenement.lieu }}</td>
+        </tr>
+        <tr>
+            <th>nombre de place</th>
+            <td>{{ evenement.nbplace }}</td>
+        </tr>
+        <tr>
+            <th>Image</th>
+            <td style="..."><img src="{{ asset('images/' ~ evenement.nomImage)}}" width="50" height="50"></td>
+
+
+        </tr>
+        <tr>
+            <th>Date</th>
+            <td>{% if evenement.dateEvent %}{{ evenement.dateEvent|date('Y-m-d') }}{% endif %}</td>
+
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>{{ evenement.description }}</td>
+        </tr>
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('evenement_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('evenement_edit', { 'id': evenement.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+    <div><ul> <button class="btn btn-danger"  style="color: #2c2421">  <a href="{{ path('evenement_index') }}" style="color: #9f191f">Annuler</a></button></ul></div>
+
+
+    <div><ul>        <button  class="btn btn-danger "> <a href="{{ path('evenement_edit', { 'id': evenement.id }) }}"onclick="return confirm('vous voulez modifier l evenement ?')" style="color: #9f191f">Modifier</a></button>
+        </ul></div>
+
+    <div><ul>{{ form_start(delete_form) }}
+            <input type="submit" value="Supprimer"style="background-color: #9f191f">
             {{ form_end(delete_form) }}
-        </li>
-    </ul>
+        </ul></div>
+
+
 {% endblock %}

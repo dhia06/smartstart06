@@ -25,4 +25,9 @@ evenement_delete:
 calendrier:
     path:     /calendrier
     defaults: { _controller: "LastBundle:Evenement:calendrier" }
+evenement_pdf:
+    path:     /pdf
+    defaults: { _controller: "LastBundle:Evenement:pdf" }
+
+
 

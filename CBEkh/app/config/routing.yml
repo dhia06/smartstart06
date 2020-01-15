@@ -1,3 +1,7 @@
+actualite:
+    resource: "@ActualiteBundle/Resources/config/routing.yml"
+    prefix:   /
+
 last:
     resource: "@LastBundle/Resources/config/routing.yml"
     prefix:   /event
@@ -10,3 +14,16 @@ fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 toiba_fullcalendar:
     resource: "@FullCalendarBundle/Resources/config/routing.yaml"
+
+main:
+  resource: "@MainBundle/Resources/config/routing.yml"
+  prefix:   /main
+
+
+projet:
+  resource: "@ProjetBundle/Resources/config/routing.yml"
+  prefix:   /projet
+
+formation:
+  resource: "@FormationBundle/Resources/config/routing.yml"
+  prefix:   /Formation

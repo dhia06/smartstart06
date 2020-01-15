@@ -1,21 +1,85 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Evenement edit</h1>
+<div class="modal-content">
+    {{ form_start(form) }}
+    <div class="modal-header">
 
-    {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
-    {{ form_end(edit_form) }}
+        <h1 style="color:#9f191f"><b><i><center>Modifier un évènement</center></i></b></h1>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="form-group col-xs-5">
+                {{ form_label(form.titre, 'Titre : ',{'attr': {'class': 'control-label'}})  }}
+                {{ form_widget(form.titre,  {'attr': {'class': 'form-control'}}) }}
 
+            </div>
+        </div>
+
+        <div class="form-group col-xs-3">
+            {{ form_label(form.dateEvent, 'Date : ',{'attr': {'class': 'control-label'}}) }}
+
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                </div>
+                {{ form_widget(form.dateEvent, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-xs-5">
+                {{ form_label(form.description, 'Description : ',{'attr': {'class': 'control-label'}})  }}
+                {{ form_widget(form.description,  {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="form-group col-xs-5">
+                {{ form_label(form.lieu, 'Lieu : ',{'attr': {'class': 'control-label'}})  }}
+                {{ form_widget(form.lieu,  {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="form-group col-xs-5">
+                {{ form_label(form.nbplace, 'nombre de place : ',{'attr': {'class': 'control-label'}})  }}
+                {{ form_widget(form.nbplace,  {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="form-group col-xs-5">
+                {{ form_label(form.file, 'Image : ',{'attr': {'class': 'control-label'}})  }}
+                {{ form_widget(form.file,  {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+
+        <div><ul>{{ form_start(form) }}
+                {{ form_widget(form) }}
+                <input type="submit" value="modifier" style="background-color: #9f191f"/>
+                {{ form_end(form) }}
+            </ul>
+        </div>
+<div>
     <ul>
-        <li>
-            <a href="{{ path('evenement_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
+       <button class="btn btn-danger">
+            <a href="{{ path('evenement_index') }}" style="color: #9f191f">Annuler</a>
+        </button>
     </ul>
+    </div>
+    <div>
+        <ul>
+            {{ form_start(delete_form) }}
+            <input type="submit" value="supprimer" style="background-color: #9f191f">
+            {{ form_end(delete_form) }}
+        </ul>
+    </div>
+
+        </div>
+    </div>
+</div>
 {% endblock %}

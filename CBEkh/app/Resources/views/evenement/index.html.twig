@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Evenements list</h1>
+    <h1 style="color: #9f191f"><b><i><center>liste des Evenements </center></i></b></h1>
     {{ socialButtons( { 'facebook': {'locale':'fr_FR', 'send':true}} ) }}
-    <table>
+    <table class="table table-bordered table-striped" cellpadding="0" border="2">
         <thead>
             <tr>
                 <th>Id</th>
@@ -25,27 +25,38 @@
                 <td>{{ evenement.description }}</td>
                 <td>{% if evenement.dateEvent %}{{ evenement.dateEvent|date('Y-m-d') }}{% endif %}</td>
                 <td>{{ evenement.nbplace }}</td>
-                <td>{{ evenement.nomImage }}</td>
+                <td style="..."><img src="{{ asset('images/' ~ evenement.nomImage)}}" width="50" height="50"></td>
+
+
                 <td>
                     <ul>
-                        <li>
-                            <a href="{{ path('evenement_show', { 'id': evenement.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('evenement_edit', { 'id': evenement.id }) }}">edit</a>
-                        </li>
+
+                            <button class=" btn btn-danger"> <a href="{{ path('evenement_show', { 'id': evenement.id }) }}" style="color: #9f191f">afficher</a></button>
+
+
+                         <button class="btn btn-danger"> <a href="{{ path('evenement_edit', { 'id': evenement.id }) }}" style="color: #9f191f">modifier</a></button>
+
+
+                    </ul>
+                </td>
+                <td><ul>
+                        <button class="btn btn-danger"><a href="{{ path('evenement_pdf') }}"style="color: #9f191f">pdf</a></button>
                     </ul>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
+<div class="btn btn-info">
+    {{ knp_pagination_render(evenements ) }}
+</div>
 
 
     <ul>
-        <li>
-            <a href="{{ path('evenement_new') }}">Create a new evenement</a>
-        </li>
+       <center></center>
+            <button class="btn btn-danger"><a href="{{ path('evenement_new') }}"style="color: #9f191f">Creer un evenement</a></button>
+        </center>
+
     </ul>
+
 {% endblock %}

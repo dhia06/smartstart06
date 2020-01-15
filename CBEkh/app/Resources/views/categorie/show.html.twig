@@ -1,9 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Categorie</h1>
 
-    <table>
+    <h1 style="color: #9f191f"><b><i><center>Categorie</center></i></b></h1>
+
+
+    <table class="table table-bordered table-striped" cellpadding="0" border="2">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -20,17 +22,19 @@
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('categorie_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('categorie_edit', { 'id': categorie.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+    <div><ul> <button class="btn btn-danger">
+                <a href="{{ path('categorie_index') }}" style="color: #0c0c0c">Annuler</a>
+            </button></ul></div>
+       <div><ul> <button class="btn btn-danger">
+                   <a href="{{ path('categorie_edit', { 'id': categorie.id }) }}" style="color: #0c0c0c">modifier</a>
+               </button></ul></div>
+
+       <div><ul>
+               {{ form_start(delete_form) }}
+               <input type="submit" value="supprimer" style="background-color: #9f191f">
+               {{ form_end(delete_form) }}
+
+           </ul></div>
+
+
 {% endblock %}

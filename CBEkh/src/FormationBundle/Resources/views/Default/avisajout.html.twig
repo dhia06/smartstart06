@@ -1,0 +1,51 @@
+{% extends 'base1.html.twig' %}
+{% block body %}
+    <div class="card card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg);">
+
+        <!-- Content -->
+        <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+            <div>
+                <center>
+                    {% if(test=="ajout") %}
+                        <h1 style="color: #9e0505">Add Avis</h1>
+                    {% else %}
+                        <h1 style="color: #9e0505"> Modify Avis</h1>
+                    {% endif %} </center>
+
+
+                <center>
+                    {{ form_start(form) }}
+
+                    <table>
+                        <tr>
+                            <td style="color: #9e0505"> Titre Avis:</td> <td> {{ form_widget(form.titre) }}</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #9e0505"> Commentaire:</td> <td> {{ form_widget(form.description) }}</td>
+                        </tr>
+
+                        <td>
+                            {% if (test=="ajout") %}
+
+                            <input  type="submit" value="Ajouter"></td>
+                        {% else %}
+                            <input  type="submit" value="Modifier"></td>
+                        {% endif %}
+
+                        </tr>
+                    </table>
+                </center>
+                </center>
+
+                {{ form_end(form) }}
+            </div>
+        </div>
+        <!-- Content -->
+    </div>
+
+
+
+
+
+{% endblock %}
+

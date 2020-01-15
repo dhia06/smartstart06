@@ -1,0 +1,32 @@
+projet_homepage:
+    path:     /
+    defaults: { _controller: ProjetBundle:Default:index }
+
+projet_ajoutformulaire:
+    path:     /ajoutformulaire/{id}
+    defaults: { _controller: ProjetBundle:Formulaire:ajoutformulaire }
+
+projet_afficheformulaire:
+    path:     /afficheformulaire
+    defaults: { _controller: ProjetBundle:Formulaire:afficheformulaire }
+
+projet_deleteformulaire:
+    path:     /deleteformulaire/{id}
+    defaults: { _controller: ProjetBundle:Formulaire:deleteformulaire }
+
+projet_ajoutprojet:
+    path:     /ajoutprojet
+    defaults: { _controller: ProjetBundle:Projet:ajoutprojet }
+
+projet_afficheprojet:
+    path:     /afficheprojet
+    defaults: { _controller: ProjetBundle:Projet:afficheprojet }
+
+projet_deleteprojet:
+    path:     /deleteprojet/{id}
+    defaults: { _controller: ProjetBundle:Projet:deleteprojet }
+
+projet_updateprojet:
+    path:     /updateprojet/{id}
+    defaults: { _controller: ProjetBundle:Projet:updateprojet }
+

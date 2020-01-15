@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div>
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+            <button type="button" class="btn btn-danger"><a href="{{ path('fos_user_security_logout') }}">
+                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                </a></button>
+        {% else %}
+            <button class="btn btn-info"><a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a></button>
+        {% endif %}
+    </div>
+
+
+    <button class="btn btn-warning"><a href="{{ path ('reclamation_recherche') }}" >recherche</a></button>
+
+
+
+    <h1>Reclamations list</h1>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Id11</th>
+                <th>Sujet11</th>
+                <th>Text11</th>
+                <th>Phone11</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for reclamation in reclamations %}
+            <tr>
+                <td><a href="{{ path('reclamation_show', { 'id11': reclamation.id11 }) }}">{{ reclamation.id11 }}</a></td>
+                <td>{{ reclamation.sujet11 }}</td>
+                <td>{{ reclamation.text11 }}</td>
+                <td>{{ reclamation.phone11 }}</td>
+                <td>
+
+                    <button class="btn btn-facebook"><a href="{{ path('reclamation_show', { 'id11': reclamation.id11 }) }}">show</a></button>
+
+                    <button class="btn btn-foursquare"><a href="{{ path('reclamation_edit', { 'id11': reclamation.id11 }) }}">edit</a></button>
+
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+
+
+            <button class="btn btn-twitter"><a href="{{ path('reclamation_new') }}">Create a new reclamation</a></button>
+
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+
+{% endblock %}

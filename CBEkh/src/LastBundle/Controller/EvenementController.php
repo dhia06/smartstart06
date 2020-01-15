@@ -3,8 +3,14 @@
 namespace LastBundle\Controller;
 
 use LastBundle\Entity\Evenement;
+use LastBundle\Form\EvenementType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+//use Doctrine\Common\Persistence\PersistentObject;
+//use http\Env\Response;
+use Doctrine\Common\Persistence\PersistentObject;
+use Symfony\Component\HttpFoundation\Response;
+
 
 /**
  * Evenement controller.
@@ -16,15 +22,28 @@ class EvenementController extends Controller
      * Lists all evenement entities.
      *
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
 
         $evenements = $em->getRepository('LastBundle:Evenement')->findAll();
 
-        return $this->render('evenement/index.html.twig', array(
+       /* return $this->render('evenement/index.html.twig', array(
             'evenements' => $evenements,
         ));
+        */
+
+
+        $paginator  = $this->get('knp_paginator');
+
+        $pagination = $paginator->paginate($evenements,
+            $request->query->get('page',1),
+            $request->query->get('limit',3)
+
+        );
+
+        return $this->render('evenement/index.html.twig', array(
+            'evenements' => $pagination ,));
     }
 
     /**
@@ -34,17 +53,18 @@ class EvenementController extends Controller
     public function newAction(Request $request)
     {
         $evenement = new Evenement();
-        $form = $this->createForm('LastBundle\Form\EvenementType', $evenement);
+        $form = $this->createForm(EvenementType::class, $evenement);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             //upload Image
-
+           $evenement->uploadProfilePicture();
+           // $evenement->setDateEvent(new \DateTime());
             $em = $this->getDoctrine()->getManager();
             $em->persist($evenement);
             $em->flush();
 
-            return $this->redirectToRoute('evenement_show', array('id' => $evenement->getId()));
+            return $this->redirectToRoute('evenement_index', array('id' => $evenement->getId()));
         }
 
         return $this->render('evenement/new.html.twig', array(
@@ -52,6 +72,7 @@ class EvenementController extends Controller
             'form' => $form->createView(),
         ));
     }
+
 
     /**
      * Finds and displays a evenement entity.
@@ -80,12 +101,12 @@ class EvenementController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('evenement_edit', array('id' => $evenement->getId()));
+            return $this->redirectToRoute('evenement_index', array('id' => $evenement->getId()));
         }
 
         return $this->render('evenement/edit.html.twig', array(
             'evenement' => $evenement,
-            'edit_form' => $editForm->createView(),
+            'form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
@@ -127,5 +148,25 @@ class EvenementController extends Controller
     {$events = $this->getDoctrine()->getRepository(Evenement::class)->findAll();
         return $this->render('evenement/calendrier.html.twig', array(
             'events' => $events));
+    }
+    public function pdfAction(Evenement $evenement)
+
+    {
+
+        $snappy=$this->get('knp_snappy.pdf');
+
+        $html= $this->renderView(
+            'evenement/pdf.html.twig',
+            array(
+                'event' => $evenement
+            ));
+
+
+      $filename ="downloadpdf";
+        return new Response($snappy->getOutputFromHtml($html),200,array(
+            'Content-Type'=>"application/pdf",
+            'Content-Disposition'=>'attachment ; filename="'.$filename.'.pdf"'
+        ));
+
     }
 }

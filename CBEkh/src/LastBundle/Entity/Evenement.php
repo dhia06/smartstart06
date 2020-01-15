@@ -2,7 +2,9 @@
 
 namespace LastBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Evenement
@@ -46,6 +48,7 @@ class Evenement
      * @var \DateTime
      *
      * @ORM\Column(name="date_event", type="date", nullable=false)
+     * @Assert\GreaterThan("today")
      */
     private $dateEvent;
 
@@ -55,6 +58,12 @@ class Evenement
      * @ORM\Column(name="nbplace", type="integer", nullable=false)
      */
     private $nbplace;
+
+    /**
+     * @Assert\File(maxSize="500k")
+
+     */
+    public $file ;
 
     /**
      * @var string
@@ -228,6 +237,26 @@ class Evenement
     {
         return $this->nomImage;
     }
+    public function getWebPath(){
+        return null=== $this->nomImage ? null : $this->getUploadDir.'/'.$this->nomImage ;
+    }
+
+    protected function getUlpoadRootDir(){
+        return _DIR_.'/../../../../web/'.$this->getUploadDir();
+    }
+    protected function getUploadDir(){
+        return 'nomImage' ;
+    }
+
+    /**
+     *
+     */
+    public function uploadProfilePicture(){
+        $this->file->move($this->getUploadDir(),$this->file->getClientOriginalName());
+        $this->nomImage=$this->file->getClientOriginalName();
+        $this->file=null;
+    }
+
 
     /**
      * Set idCategorie
@@ -252,4 +281,32 @@ class Evenement
     {
         return $this->idCategorie;
     }
+    /**
+     * @ORM\OneToMany(targetEntity="Participation", mappedBy="evenement")
+     */
+    private $inscriptions;
+
+    public function __construct()
+    {
+        $this->inscriptions = new ArrayCollection();
+
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getInscriptions()
+    {
+        return $this->inscriptions;
+    }
+
+    /**
+     * @param ArrayCollection $inscriptions
+     */
+    public function setInscriptions($inscriptions)
+    {
+        $this->inscriptions = $inscriptions;
+    }
+
+
 }

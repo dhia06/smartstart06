@@ -3,6 +3,10 @@ imports:
     - { resource: security.yml }
     - { resource: services.yml }
     - { resource: "@LastBundle/Resources/config/services.yml" }
+    - { resource: "@ActualiteBundle/Resources/config/services.yml" }
+    - { resource: "@MainBundle/Resources/config/services.yml" }
+    - { resource: "@ProjetBundle/Resources/config/services.yml" }
+    - { resource: "@FormationBundle/Resources/config/services.yml" }
 
 
 # Put parameters here that don't need to change on each machine where the app is deployed
@@ -32,6 +36,7 @@ framework:
     assets: ~
     php_errors:
         log: true
+
     templating:
         engines: ['twig','php']
 
@@ -114,3 +119,26 @@ nomaya_social:
             url:            null
             locale:         "fr_FR"
             counter:        "right"
+
+knp_paginator:
+    page_range:                 5          # default page range used in pagination control
+    default_options:
+        page_name:              page       # page query parameter name
+        sort_field_name:        sort       # sort field query parameter name
+        sort_direction_name:    direction  # sort direction query parameter name
+        distinct:               true       # ensure distinct results, useful when ORM queries are using GROUP BY statements
+    template:
+#        pagination: KnpPaginatorBundle:Pagination:twitter_bootstrap_v3_pagination.html.twig     # sliding pagination controls template
+#        sortable: KnpPaginatorBundle:Pagination:sortable_link.html.twig                         # sort link template
+knp_snappy:
+    pdf:
+        enabled:    true
+        binary:     "\"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe\""
+        options:    []
+    image:
+        enabled:    true
+        binary:     "\"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltoimage.exe\""
+        options:    []
+
+cmen_google_charts:
+  version: "current"

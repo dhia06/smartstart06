@@ -22,9 +22,9 @@ class Participation
     private $paticipantId;
 
     /**
-     * @var \FosUser
+     * @var \User
      *
-     * @ORM\ManyToOne(targetEntity="FosUser")
+     * @ORM\ManyToOne(targetEntity="\AppBundle\Entity\User")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="id", referencedColumnName="id")
      * })
@@ -41,12 +41,8 @@ class Participation
      */
     private $event;
 
-
-
     /**
-     * Get paticipantId
-     *
-     * @return integer
+     * @return int
      */
     public function getPaticipantId()
     {
@@ -54,23 +50,15 @@ class Participation
     }
 
     /**
-     * Set id
-     *
-     * @param \LastBundle\Entity\FosUser $id
-     *
-     * @return Participation
+     * @param int $paticipantId
      */
-    public function setId(\LastBundle\Entity\FosUser $id = null)
+    public function setPaticipantId($paticipantId)
     {
-        $this->id = $id;
-
-        return $this;
+        $this->paticipantId = $paticipantId;
     }
 
     /**
-     * Get id
-     *
-     * @return \LastBundle\Entity\FosUser
+     * @return \User
      */
     public function getId()
     {
@@ -78,26 +66,30 @@ class Participation
     }
 
     /**
-     * Set event
-     *
-     * @param \LastBundle\Entity\Evenement $event
-     *
-     * @return Participation
+     * @param \User $id
      */
-    public function setEvent(\LastBundle\Entity\Evenement $event = null)
+    public function setId($id)
     {
-        $this->event = $event;
-
-        return $this;
+        $this->id = $id;
     }
 
+
+
     /**
-     * Get event
-     *
-     * @return \LastBundle\Entity\Evenement
+     * @return \Evenement
      */
     public function getEvent()
     {
         return $this->event;
     }
+
+    /**
+     * @param \Evenement $event
+     */
+    public function setEvent($event)
+    {
+        $this->event = $event;
+    }
+
+
 }

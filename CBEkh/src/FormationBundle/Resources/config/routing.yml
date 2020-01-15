@@ -1,0 +1,52 @@
+
+
+formation_homepage:
+    path:     /
+    defaults: { _controller: FormationBundle:Default:index }
+
+formation_ajoutformation:
+    path:     /ajoutformation
+    defaults: { _controller: FormationBundle:Formation:AjouterFormation }
+
+formation_afficheformation:
+    path:     /afficheformation
+    defaults: { _controller: FormationBundle:Formation:afficheFormation }
+
+formation_supprimerformation:
+    path:     /supprimerformation/{id}
+    defaults: { _controller: FormationBundle:Formation:supprimerformation }
+
+formation_updateformation:
+    path:     /updateformation/{id}
+    defaults: { _controller: FormationBundle:Formation:updateformation }
+
+ajax_search:
+    path:     /search
+    defaults: { _controller: FormationBundle:Formation:searchDB }
+
+avis_ajout:
+    path:     /ajoutAvis
+    defaults: { _controller: FormationBundle:Avis:AjouterAvis }
+
+avis_show:
+    path:     /afficheAvis
+    defaults: { _controller: FormationBundle:Avis:afficheAvis }
+
+avis_delete:
+    path:     /supprimerAvis/{id}
+    defaults: { _controller: FormationBundle:Avis:supprimerAvis }
+
+avis_update:
+    path:     /updateAvis/{id}
+    defaults: { _controller: FormationBundle:Avis:updateAvis }
+
+nb_click:
+    path:     /nbclick/{id}
+    defaults: { _controller: FormationBundle:Formation:nb_click }
+
+
+
+
+
+
+

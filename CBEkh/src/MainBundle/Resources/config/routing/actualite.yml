@@ -1,0 +1,24 @@
+actualite_index:
+    path:     /
+    defaults: { _controller: "MainBundle:Actualite:index" }
+    methods:  GET
+
+actualite_show:
+    path:     /{id}/show
+    defaults: { _controller: "MainBundle:Actualite:show" }
+    methods:  GET
+
+actualite_new:
+    path:     /new
+    defaults: { _controller: "MainBundle:Actualite:new" }
+    methods:  [GET, POST]
+
+actualite_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MainBundle:Actualite:edit" }
+    methods:  [GET, POST]
+
+actualite_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MainBundle:Actualite:delete" }
+    methods:  DELETE

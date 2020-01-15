@@ -113,6 +113,13 @@
       <path value="$PROJECT_DIR$/vendor/friendsofsymfony/rest-bundle" />
       <path value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle" />
       <path value="$PROJECT_DIR$/vendor/toiba/fullcalendar-bundle" />
+      <path value="$PROJECT_DIR$/vendor/mgilet/notification-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-snappy" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-snappy-bundle" />
+      <path value="$PROJECT_DIR$/vendor/cmen/google-charts-bundle" />
+      <path value="$PROJECT_DIR$/vendor/friendsofsymfony/ckeditor-bundle" />
       <path value="$PROJECT_DIR$/vendor/nomaya/social-bundle" />
     </include_path>
   </component>
@@ -120,23 +127,23 @@
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="AvisAdmin&#9;FILE&#9;file://C:/xampp/htdocs/www/CBE/src/SAVBundle/Resources/config/doctrine/AvisAdmin.orm.yml" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/LastBundle" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp6\www\CBEkh\src" />
+      <recent name="C:\wamp6\www\CBEkh\app\Resources\views" />
+      <recent name="C:\wamp6\www\CBEkh\web\images" />
+      <recent name="C:\wamp6\www\CBEkh\web\js" />
+      <recent name="C:\wamp6\www\CBEkh\src\LastBundle" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp6\www\CBEkh\src\AppBundle" />
       <recent name="C:\wamp6\www\CBEkh\src\LastBundle\EventListener" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp6\www\CBEkh\src\LastBundle" />
-      <recent name="C:\xampp\htdocs\www\CBE\src\SAVBundle\Resources\views\Cahier" />
-      <recent name="C:\xampp\htdocs\www\CBE\src\SAVBundle\Resources\views\Avis" />
-      <recent name="C:\xampp\htdocs\www\CBE\app\Resources" />
-      <recent name="C:\xampp\htdocs\www\CBE\src\AppBundle\Resources\views\User" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -168,8 +175,18 @@
       <command value="s doctrine:generate:EntityManager " />
       <command value="c require --dev  nomaya/social-bundle" />
       <command value="c  nomaya/social-bundle" />
+      <command value="c require mgilet/notification-bundle" />
+      <command value="s fos:user:promote loutcha" />
+      <command value="c require knplabs/knp-paginator-bundle" />
+      <command value="s fos:user:demote loutcha" />
+      <command value="s fos:user:promote loutcha ROLE_ADMIN" />
+      <command value="c  require knplabs/knp-snappy-bundle" />
+      <command value="s cache:clear" />
+      <command value="c require cmen/google-charts-bundle" />
+      <command value="c require friendsofsymfony/ckeditor-bundle" />
       <command value="c require nomaya/social-bundle" />
       <command value="c update nomaya/social-bundle" />
+      <command value="s fos:user:promote adminn ROLE_ADMIN" />
     </option>
   </component>
   <component name="RunDashboard">
@@ -202,7 +219,17 @@
       <workItem from="1574678440638" duration="3386000" />
       <workItem from="1574932783415" duration="3246000" />
       <workItem from="1574963487448" duration="4706000" />
-      <workItem from="1575305386944" duration="18019000" />
+      <workItem from="1575305386944" duration="21673000" />
+      <workItem from="1575399511931" duration="23918000" />
+      <workItem from="1575451865719" duration="28655000" />
+      <workItem from="1575504874844" duration="3271000" />
+      <workItem from="1575509537602" duration="12041000" />
+      <workItem from="1575536829445" duration="1085000" />
+      <workItem from="1576142184751" duration="647000" />
+      <workItem from="1576225876558" duration="1247000" />
+      <workItem from="1578601119230" duration="5168000" />
+      <workItem from="1579003524873" duration="2564000" />
+      <workItem from="1579040795468" duration="247000" />
     </task>
     <servers />
   </component>

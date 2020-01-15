@@ -1,21 +1,38 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Categorie edit</h1>
+    <h1 style="color:#9f191f"><b><i><center>Modifier une gategorie</center></i></b></h1>
 
     {{ form_start(edit_form) }}
+<div class="modal-body">
+    <div class="row">
+        <div class="form-group col-xs-5">
+            {{ form_label(edit_form.libelle, 'libelle : ',{'attr': {'class': 'control-label'}})  }}
+            {{ form_widget(edit_form.libelle,  {'attr': {'class': 'form-control'}}) }}
+
+        </div>
+    </div>
+        <div class="row">
+            <div class="form-group col-xs-5">
+                {{ form_label(edit_form.description, 'Description : ',{'attr': {'class': 'control-label'}})  }}
+                {{ form_widget(edit_form.description,  {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+    </div>
+<div><ul>
         {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
+        <input type="submit" value="modifier"style="background-color: #9f191f" />
+    </ul></div>
     {{ form_end(edit_form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('categorie_index') }}">Back to the list</a>
-        </li>
-        <li>
+    <div><ul> <button class="btn btn-danger">
+                <a href="{{ path('categorie_index') }}" style="color: #0c0c0c">Anuuler</a>
+            </button></ul></div>
+
+<div><ul>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="supprimer"style="background-color: #9f191f">
             {{ form_end(delete_form) }}
-        </li>
-    </ul>
+
+    </ul></div>
 {% endblock %}

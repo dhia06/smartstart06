@@ -1,0 +1,70 @@
+{% extends 'base1.html.twig' %}
+{% block body %}
+    <center>
+        {% if(test=="ajout") %}
+            <h1> Add Projet</h1>
+        {% else %}
+            <h1> Modify Project</h1>
+        {% endif %}
+
+    </center>
+    <center>
+        {{ form_start(form) }}
+
+        <table>
+            <tr>
+                <td> Project  Title:</td> <td> {{ form_widget(form.titre) }}</td>
+            </tr>
+            <tr>
+                <td> Project Object:</td> <td> {{ form_widget(form.objectif) }}</td>
+            </tr>
+            <tr>
+                <td> Start date:</td> <td> {{ form_widget(form.dateDeb) }}</td>
+                {% if((form_errors(form.dateDeb)==true)) %}
+                    <div class="alert alert-success" role="alert">
+                        The Project Date Must Be Greater Than Today !!!!!
+                    </div>
+                {% endif %}
+            </tr>
+            <tr>
+                <td> End date:</td> <td> {{ form_widget(form.dateFin) }}</td>
+                {% if((form_errors(form.dateFin)==true)) %}
+                    <div class="alert alert-success" role="alert">
+                        The Project end Date Must Be after one month !!!!!
+                    </div>
+                {% endif %}
+            </tr>
+            <tr>
+                <td> Project description:</td> <td> {{ form_widget(form.description) }}</td>
+            </tr>
+            <tr>
+                <td> Projet Price:</td> <td> {{ form_widget(form.montant) }}</td>
+                {% if((form_errors(form.montant)==true)) %}
+                    <div class="alert alert-success" role="alert">
+                        The Project Price should be between 200 & 2000 !!!!!
+                    </div>
+                {% endif %}
+            </tr>
+            <tr>            <td> Projet photo:</td> <td> {{ form_row(form.imagep) }}</td>
+            </tr>
+
+
+            <tr>
+                <td> </td>
+                <td>
+                    {% if (test=="ajout") %}
+
+                    <input type="submit" value="Ajouter"></td>
+                {% else %}
+                    <input type="submit" value="Modifier">
+
+                {% endif %}
+
+            </tr>
+        </table>
+    </center>
+
+    {{ form_end(form) }}
+
+
+{% endblock %}

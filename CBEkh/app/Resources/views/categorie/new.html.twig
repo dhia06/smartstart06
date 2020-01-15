@@ -1,28 +1,41 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Categorie creation</h1>
+    <h1 style="color:#9f191f"><b><i><center>Ajouter une categorie</center></i></b></h1>
 
     {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
-    <ul class="social-links">
-        <li> {{ socialButtons( { 'facebook': {'locale':'fr_FR', 'send':true}} ) }}</li>
-        <li>
-            {{ googleplusButton( {'locale':'fr', 'url':'http://google.fr' }) }}
-        </li>
+<div class="modal-body">
+    <div class="row">
+        <div class="form-group col-xs-5">
+            {{ form_label(form.libelle, 'libelle : ',{'attr': {'class': 'control-label'}})  }}
+            {{ form_widget(form.libelle,  {'attr': {'class': 'form-control'}}) }}
 
-    </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-xs-5">
+            {{ form_label(form.description, 'Description : ',{'attr': {'class': 'control-label'}})  }}
+            {{ form_widget(form.description,  {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+</div>
+<div><ul>
+        {{ form_widget(form) }}
+        <input type="submit" value="Ajouter" style="background-color: #9f191f" />
+    {{ form_end(form) }}
+
 
 
     <ul>
         <li>
-            <a href="{{ path('categorie_index') }}">Back to the list</a>
+        </li>
+    </ul>
+
+            <a href="{{ path('categorie_index') }}" style="color: #9f191f">liste  des gategorie </a>
         </li>
     </ul>
     <ul class="social-links">
-        <li> {{ socialButtons( { 'facebook': {'locale':'fr_FR', 'send':true}} ) }}</li>
+         {{ socialButtons( { 'facebook': {'locale':'fr_FR', 'send':true}} ) }}
 
     </ul>
 
